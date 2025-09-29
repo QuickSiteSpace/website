@@ -1,0 +1,811 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>QuickSite.Space - AI-Powered Website Builder</title>
+
+    <!-- Bootstrap CSS -->
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+
+    <!-- Font Awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+
+    <!-- Google Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: "Inter", sans-serif;
+        background: linear-gradient(
+          135deg,
+          #f0fdf4 0%,
+          #ecfdf5 50%,
+          #d1fae5 100%
+        );
+        color: #1e293b;
+        overflow-x: hidden;
+      }
+
+      /* Navigation */
+      .navbar {
+        background: rgba(255, 255, 255, 0.95);
+        backdrop-filter: blur(10px);
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+        padding: 2rem 0;
+      }
+
+      .navbar-brand {
+        font-weight: 800;
+        font-size: 1.5rem;
+        background: linear-gradient(135deg, #059669, #10b981);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+
+      .nav-link {
+        color: #1e293b !important;
+        font-weight: 500;
+        margin: 0 0.5rem;
+        transition: color 0.3s;
+      }
+
+      .nav-link:hover {
+        color: #059669 !important;
+      }
+
+      .btn-primary {
+        background: linear-gradient(135deg, #059669, #10b981);
+        border: none;
+        padding: 10px 28px;
+        border-radius: 50px;
+        font-weight: 600;
+        transition: transform 0.3s, box-shadow 0.3s;
+      }
+
+      .btn-primary:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 10px 25px rgba(5, 150, 105, 0.3);
+      }
+
+      .btn-outline-primary {
+        border: 2px solid #059669;
+        color: #059669;
+        padding: 10px 28px;
+        border-radius: 50px;
+        font-weight: 600;
+        transition: all 0.3s;
+      }
+
+      .btn-outline-primary:hover {
+        background: #059669;
+        color: white;
+      }
+
+      /* Hero Section */
+      .hero {
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        padding-top: 80px;
+      }
+
+      .hero-badge {
+        display: inline-block;
+        padding: 10px 24px;
+        background: rgba(5, 150, 105, 0.1);
+        border: 2px solid rgba(5, 150, 105, 0.2);
+        border-radius: 50px;
+        color: #059669;
+        font-weight: 600;
+        margin-bottom: 1.5rem;
+      }
+
+      .hero h1 {
+        font-size: clamp(2.5rem, 7vw, 5rem);
+        font-weight: 800;
+        background: linear-gradient(135deg, #059669, #10b981, #34d399);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        line-height: 1.2;
+        margin-bottom: 1.5rem;
+      }
+
+      .hero p {
+        font-size: 1.3rem;
+        color: #64748b;
+        margin-bottom: 2rem;
+      }
+
+      .stats {
+        display: flex;
+        gap: 3rem;
+        margin-top: 3rem;
+        flex-wrap: wrap;
+      }
+
+      .stat-item h3 {
+        font-size: 2.5rem;
+        font-weight: 800;
+        background: linear-gradient(135deg, #059669, #10b981);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+
+      .stat-item p {
+        color: #64748b;
+        font-size: 0.9rem;
+      }
+
+      /* Cards */
+      .card-custom {
+        background: white;
+        border: 2px solid #e2e8f0;
+        border-radius: 20px;
+        padding: 2rem;
+        height: 100%;
+        transition: all 0.3s;
+      }
+
+      .card-custom:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 20px 40px rgba(5, 150, 105, 0.15);
+        border-color: #059669;
+      }
+
+      .icon-box {
+        width: 70px;
+        height: 70px;
+        border-radius: 15px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 2rem;
+        color: white;
+        margin-bottom: 1.5rem;
+      }
+
+      .bg-gradient-1 {
+        background: linear-gradient(135deg, #059669, #10b981);
+      }
+      .bg-gradient-2 {
+        background: linear-gradient(135deg, #10b981, #34d399);
+      }
+      .bg-gradient-3 {
+        background: linear-gradient(135deg, #14b8a6, #2dd4bf);
+      }
+      .bg-gradient-4 {
+        background: linear-gradient(135deg, #047857, #059669);
+      }
+      .bg-gradient-5 {
+        background: linear-gradient(135deg, #065f46, #047857);
+      }
+      .bg-gradient-6 {
+        background: linear-gradient(135deg, #34d399, #6ee7b7);
+      }
+
+      .section-title {
+        font-size: clamp(2rem, 5vw, 3.5rem);
+        font-weight: 800;
+        background: linear-gradient(135deg, #059669, #10b981);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        margin-bottom: 1rem;
+      }
+
+      .section-subtitle {
+        font-size: 1.2rem;
+        color: #64748b;
+        margin-bottom: 3rem;
+      }
+
+      /* Timeline */
+      .timeline-item {
+        background: white;
+        border: 2px solid #e2e8f0;
+        border-radius: 20px;
+        padding: 2rem;
+        margin-bottom: 2rem;
+        transition: all 0.3s;
+      }
+
+      .timeline-item:hover {
+        transform: scale(1.05);
+        border-color: #6366f1;
+        box-shadow: 0 10px 30px rgba(99, 102, 241, 0.15);
+      }
+
+      .timeline-badge {
+        display: inline-block;
+        padding: 6px 16px;
+        border-radius: 50px;
+        font-weight: 600;
+        font-size: 0.85rem;
+        margin-bottom: 1rem;
+      }
+
+      .badge-blue {
+        background: rgba(99, 102, 241, 0.15);
+        color: #6366f1;
+      }
+      .badge-green {
+        background: rgba(16, 185, 129, 0.15);
+        color: #10b981;
+      }
+      .badge-orange {
+        background: rgba(245, 158, 11, 0.15);
+        color: #f59e0b;
+      }
+      .badge-red {
+        background: rgba(239, 68, 68, 0.15);
+        color: #ef4444;
+      }
+
+      /* Footer */
+      footer {
+        background: white;
+        border-top: 2px solid #e2e8f0;
+        padding: 3rem 0 1.5rem;
+        margin-top: 5rem;
+      }
+
+      .social-icon {
+        width: 45px;
+        height: 45px;
+        border-radius: 10px;
+        background: rgba(5, 150, 105, 0.1);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #059669;
+        transition: all 0.3s;
+      }
+
+      .social-icon:hover {
+        background: linear-gradient(135deg, #059669, #10b981);
+        color: white;
+        transform: translateY(-5px);
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg fixed-top">
+      <div class="container">
+        <a class="navbar-brand" href="#home">
+          <img
+            src="logo.png"
+            alt="QuickSite.Space Logo"
+            class="logo"
+            style="height: 70px"
+          />
+        </a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto align-items-center">
+            <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
+            <li class="nav-item">
+              <a class="nav-link" href="#about">About</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#features">Features</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#team">Join Team</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#roadmap">Roadmap</a>
+            </li>
+            <li class="nav-item ms-3">
+              <a href="#beta" class="btn btn-primary btn-sm">Try Beta</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+      <div class="container">
+        <div class="row align-items-center">
+          <div class="col-lg-7">
+            <div class="hero-badge">
+              <i class="fas fa-sparkles me-2"></i>Beta Launching May 2025
+            </div>
+            <h1>AI-Powered Website Builder 🚀</h1>
+            <p>
+              Launch your website faster with AI Co-Pilots for coding & design.
+              Build, iterate, and publish in minutes.
+            </p>
+            <div class="d-flex gap-3 flex-wrap mb-4">
+              <a href="#beta" class="btn btn-primary btn-lg"
+                >Get Started <i class="fas fa-arrow-right ms-2"></i
+              ></a>
+              <a href="#team" class="btn btn-outline-primary btn-lg"
+                >Join the Team</a
+              >
+            </div>
+            <div class="stats">
+              <div class="stat-item">
+                <h3>21+</h3>
+                <p>Early Adopters</p>
+              </div>
+              <div class="stat-item">
+                <h3>10x</h3>
+                <p>Faster Build</p>
+              </div>
+              <div class="stat-item">
+                <h3>2025</h3>
+                <p>Launch Year</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-5 mt-5 mt-lg-0">
+            <div
+              style="
+                background: white;
+                border: 2px solid #e2e8f0;
+                border-radius: 20px;
+                padding: 1rem;
+                box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+              "
+            >
+              <div
+                style="
+                  background: #f8fafc;
+                  border-radius: 15px;
+                  padding: 3rem;
+                  text-align: center;
+                  min-height: 400px;
+                  display: flex;
+                  flex-direction: column;
+                  justify-content: center;
+                "
+              >
+                <div
+                  style="
+                    width: 100px;
+                    height: 100px;
+                    background: linear-gradient(135deg, #059669, #10b981);
+                    border-radius: 20px;
+                    margin: 0 auto 1.5rem;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    font-size: 3rem;
+                    color: white;
+                  "
+                >
+                  <i class="fas fa-code"></i>
+                </div>
+                <h4>Interactive Editor</h4>
+                <p style="color: #64748b">
+                  Build beautiful websites with AI assistance
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-5">
+      <div class="container">
+        <div class="text-center mb-5">
+          <h2 class="section-title">Revolutionizing Website Creation</h2>
+          <p class="section-subtitle">
+            Solving the complexity of modern web development
+          </p>
+        </div>
+        <div class="row g-4">
+          <div class="col-lg-6">
+            <div class="card-custom" style="border-color: #fecaca">
+              <div
+                class="icon-box"
+                style="background: linear-gradient(135deg, #ef4444, #dc2626)"
+              >
+                <i class="fas fa-exclamation-triangle"></i>
+              </div>
+              <h3>The Problem</h3>
+              <p style="color: #64748b">
+                Traditional website builders are either too limited for
+                professionals or too complex for beginners. Development takes
+                weeks, requires multiple tools, and demands constant
+                maintenance.
+              </p>
+            </div>
+          </div>
+          <div class="col-lg-6">
+            <div class="card-custom" style="border-color: #bbf7d0">
+              <div class="icon-box bg-gradient-4">
+                <i class="fas fa-lightbulb"></i>
+              </div>
+              <h3>Our Solution</h3>
+              <p style="color: #64748b">
+                QuickSite.Space combines AI-powered coding and design assistants
+                with instant templates and one-click publishing. Build
+                professional websites in minutes, not weeks.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="py-5">
+      <div class="container">
+        <div class="text-center mb-5">
+          <h2 class="section-title">Powerful Features</h2>
+          <p class="section-subtitle">
+            Everything you need to build, launch, and grow
+          </p>
+        </div>
+        <div class="row g-4">
+          <div class="col-lg-4 col-md-6">
+            <div class="card-custom">
+              <div class="icon-box bg-gradient-1">
+                <i class="fas fa-code"></i>
+              </div>
+              <h4>AI Co-Pilot Coder</h4>
+              <p style="color: #64748b">
+                Intelligent code generation that writes clean, production-ready
+                code tailored for simple one-page websites.
+              </p>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6">
+            <div class="card-custom">
+              <div class="icon-box bg-gradient-2">
+                <i class="fas fa-palette"></i>
+              </div>
+              <h4>AI Co-Pilot Designer</h4>
+              <p style="color: #64748b">
+                Smart design suggestions that adapt to your brand and create
+                stunning visual layouts.
+              </p>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6">
+            <div class="card-custom">
+              <div class="icon-box bg-gradient-3">
+                <i class="fas fa-layer-group"></i>
+              </div>
+              <h4>Instant Templates</h4>
+              <p style="color: #64748b">
+                Pre-built, professional-quality templates that you can customize
+                instantly.
+              </p>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6">
+            <div class="card-custom">
+              <div class="icon-box bg-gradient-4">
+                <i class="fas fa-bolt"></i>
+              </div>
+              <h4>One-Click Publishing</h4>
+              <p style="color: #64748b">
+                Deploy your website to production instantly with optimized
+                hosting.
+              </p>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6">
+            <div class="card-custom">
+              <div class="icon-box bg-gradient-5">
+                <i class="fas fa-book"></i>
+              </div>
+              <h4>Knowledgebase Automation</h4>
+              <p style="color: #64748b">
+                Grow user knowledgebase and use it to automate future
+                improvements.
+              </p>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6">
+            <div class="card-custom">
+              <div class="icon-box bg-gradient-6">
+                <i class="fas fa-sync-alt"></i>
+              </div>
+              <h4>Auto Updates</h4>
+              <p style="color: #64748b">
+                Monitor and suggest updates for existing sites automatically.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Team Section -->
+    <section id="team" class="py-5">
+      <div class="container">
+        <div class="text-center mb-5">
+          <h2 class="section-title">Join Our Team</h2>
+          <p class="section-subtitle">Be part of the revolution</p>
+        </div>
+        <div class="row g-4">
+          <div class="col-lg-6">
+            <div class="card-custom">
+              <span
+                class="badge"
+                style="
+                  background: linear-gradient(135deg, #059669, #10b981);
+                  color: white;
+                  padding: 8px 20px;
+                  border-radius: 50px;
+                  font-weight: 700;
+                "
+                >DEVELOPMENT LEADS</span
+              >
+              <h3 class="mt-3 mb-3">Team Lead Volunteers</h3>
+              <p style="color: #64748b; margin-bottom: 1.5rem">
+                3+ years experience required
+              </p>
+              <h5>Benefits:</h5>
+              <ul style="color: #64748b">
+                <li class="mb-2">Preferential seats on the board</li>
+                <li class="mb-2">Early employment opportunities</li>
+                <li class="mb-2">Leadership experience in agile startup</li>
+                <li class="mb-2">Equity options</li>
+              </ul>
+              <h5 class="mt-4">Responsibilities:</h5>
+              <ul style="color: #64748b">
+                <li class="mb-2">3 meetings per week</li>
+                <li class="mb-2">Code reviews & mentoring</li>
+                <li class="mb-2">Lead junior developers</li>
+              </ul>
+              <a href="#" class="btn btn-primary w-100 mt-3"
+                >Apply as Lead <i class="fas fa-arrow-right ms-2"></i
+              ></a>
+            </div>
+          </div>
+          <div class="col-lg-6">
+            <div class="card-custom">
+              <span
+                class="badge"
+                style="
+                  background: linear-gradient(135deg, #10b981, #34d399);
+                  color: white;
+                  padding: 8px 20px;
+                  border-radius: 50px;
+                  font-weight: 700;
+                "
+                >CODECAMP INTERNS</span
+              >
+              <h3 class="mt-3 mb-3">CodeCamp Program</h3>
+              <p style="color: #64748b; margin-bottom: 1.5rem">
+                $25/week • 10 hours/week • 3-month program
+              </p>
+              <h5>What You'll Learn:</h5>
+              <ul style="color: #64748b">
+                <li class="mb-2">React, TypeScript, Node.js, Firebase</li>
+                <li class="mb-2">AI Integration (OpenAI, Claude, Gemini)</li>
+                <li class="mb-2">Real-world project development</li>
+                <li class="mb-2">Agile workflow & CI/CD</li>
+              </ul>
+              <h5 class="mt-4">What's Included:</h5>
+              <ul style="color: #64748b">
+                <li class="mb-2">Daily meetings & Discord support</li>
+                <li class="mb-2">Code reviews & mentorship</li>
+                <li class="mb-2">Flexible schedule (no lock-in)</li>
+                <li class="mb-2">Career advancement opportunities</li>
+              </ul>
+              <a
+                href="#"
+                class="btn btn-primary w-100 mt-3"
+                style="background: linear-gradient(135deg, #10b981, #34d399)"
+                >Join CodeCamp <i class="fas fa-arrow-right ms-2"></i
+              ></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Roadmap Section -->
+    <section id="roadmap" class="py-5">
+      <div class="container">
+        <div class="text-center mb-5">
+          <h2 class="section-title">Our Roadmap</h2>
+          <p class="section-subtitle">The journey from beta to launch</p>
+        </div>
+        <div class="row g-4">
+          <div class="col-lg-6">
+            <div class="timeline-item">
+              <span class="timeline-badge badge-blue">May 2025</span>
+              <h4>Beta Release</h4>
+              <p style="color: #64748b">
+                Launch beta version with core AI features: Co-Pilot Coder,
+                Co-Pilot Designer, and instant templates.
+              </p>
+            </div>
+          </div>
+          <div class="col-lg-6">
+            <div class="timeline-item">
+              <span class="timeline-badge badge-green">Q3 2025</span>
+              <h4>First Paid Users</h4>
+              <p style="color: #64748b">
+                Convert early adopters to premium plans and validate
+                product-market fit.
+              </p>
+            </div>
+          </div>
+          <div class="col-lg-6">
+            <div class="timeline-item">
+              <span class="timeline-badge badge-orange">Q4 2025</span>
+              <h4>Secure Funding</h4>
+              <p style="color: #64748b">
+                Raise seed funding to scale the team and accelerate development.
+              </p>
+            </div>
+          </div>
+          <div class="col-lg-6">
+            <div class="timeline-item">
+              <span class="timeline-badge badge-red">Q1 2026</span>
+              <h4>Official Launch</h4>
+              <p style="color: #64748b">
+                Full public release with enterprise features and advanced AI
+                capabilities.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section id="beta" class="py-5">
+      <div class="container">
+        <div
+          class="text-center"
+          style="
+            background: linear-gradient(
+              135deg,
+              rgba(5, 150, 105, 0.1),
+              rgba(16, 185, 129, 0.1)
+            );
+            border: 2px solid rgba(5, 150, 105, 0.2);
+            border-radius: 30px;
+            padding: 4rem 2rem;
+          "
+        >
+          <h2 class="display-4 fw-bold mb-4">Ready to Get Started?</h2>
+          <p
+            class="lead mb-4"
+            style="color: #64748b; max-width: 700px; margin: 0 auto"
+          >
+            Join our beta program and be among the first to experience the
+            future of website building.
+          </p>
+          <div class="d-flex gap-3 justify-content-center flex-wrap">
+            <a href="#" class="btn btn-primary btn-lg">Join Beta Waitlist</a>
+            <a href="#" class="btn btn-outline-primary btn-lg"
+              >Schedule a Demo</a
+            >
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+      <div class="container">
+        <div class="row g-4">
+          <div class="col-lg-4">
+            <h4 class="mb-3">
+              <i class="fas fa-rocket me-2" style="color: #059669"></i>
+              <span class="navbar-brand">QuickSite.Space</span>
+            </h4>
+            <p style="color: #64748b; margin-bottom: 1.5rem">
+              AI-powered website builder revolutionizing how individuals and
+              businesses create their online presence.
+            </p>
+            <div class="d-flex gap-3">
+              <a href="#" class="social-icon"><i class="fab fa-github"></i></a>
+              <a href="#" class="social-icon"
+                ><i class="fab fa-linkedin"></i
+              ></a>
+              <a href="#" class="social-icon"><i class="fab fa-discord"></i></a>
+              <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+            </div>
+          </div>
+          <div class="col-lg-2 col-md-4">
+            <h5 class="mb-3">Product</h5>
+            <ul class="list-unstyled">
+              <li class="mb-2">
+                <a
+                  href="#features"
+                  style="color: #64748b; text-decoration: none"
+                  >Features</a
+                >
+              </li>
+              <li class="mb-2">
+                <a href="#roadmap" style="color: #64748b; text-decoration: none"
+                  >Roadmap</a
+                >
+              </li>
+              <li class="mb-2">
+                <a href="#" style="color: #64748b; text-decoration: none"
+                  >Pricing</a
+                >
+              </li>
+            </ul>
+          </div>
+          <div class="col-lg-2 col-md-4">
+            <h5 class="mb-3">Company</h5>
+            <ul class="list-unstyled">
+              <li class="mb-2">
+                <a href="#about" style="color: #64748b; text-decoration: none"
+                  >About</a
+                >
+              </li>
+              <li class="mb-2">
+                <a href="#team" style="color: #64748b; text-decoration: none"
+                  >Careers</a
+                >
+              </li>
+              <li class="mb-2">
+                <a href="#" style="color: #64748b; text-decoration: none"
+                  >Contact</a
+                >
+              </li>
+            </ul>
+          </div>
+          <div class="col-lg-4 col-md-4">
+            <h5 class="mb-3">Connect</h5>
+            <p style="color: #64748b">
+              <i class="fas fa-envelope me-2"></i>hello@quicksite.space
+            </p>
+            <p style="color: #64748b">
+              <i class="fas fa-map-marker-alt me-2"></i>Australia 🇦🇺
+            </p>
+          </div>
+        </div>
+        <hr style="border-color: #e2e8f0; margin: 2rem 0 1rem" />
+        <p class="text-center" style="color: #64748b">
+          © 2025 QuickSite.Space. All rights reserved.
+        </p>
+      </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/js/bootstrap.bundle.min.js"></script>
+
+    <script>
+      // Smooth scroll
+      document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+        anchor.addEventListener("click", function (e) {
+          e.preventDefault();
+          const target = document.querySelector(this.getAttribute("href"));
+          if (target) {
+            target.scrollIntoView({ behavior: "smooth" });
+          }
+        });
+      });
+    </script>
+  </body>
+</html>
