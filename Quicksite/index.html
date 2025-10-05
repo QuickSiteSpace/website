@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QuickSite.Space - AI-Powered Website Builder</title>
+    <link rel="shortcut icon" href="logo.png" type="image/x-icon">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!--Font awesome-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <!--font-->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body{
+            font-family: 'Inter', sans-serif;
+        }
+        
+        #nav-bar{
+            position: fixed;
+            width: 100%;
+            top: 0;
+            left: 0;
+            backdrop-filter: blur(8px);
+            background-color: rgba(255,255,255,0.9);
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+            z-index: 10;
+        }
+        .nav-item{
+            border-radius: 0.5rem;
+            padding: 0.5rem;
+            margin: 0 0.5rem;
+            font-weight: 600;
+        }
+        .nav-item:hover{
+            background-color: #059669;
+            color: white;
+            cursor: pointer;
+        }
+        section {
+         scroll-margin-top: 5rem; 
+        }
+        .card-item{
+            padding: 1rem;
+            border: 2px solid #d1d5db;
+            border-radius: 8px;
+            margin-top: 1.5rem;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        .card-item:hover{
+            border: 2px solid #139e67 ;
+            transform: translateY(-10px);
+        }
+        .card-item h3{
+            font-weight: 500;
+            font-size: 1.25rem;
+            margin: 0.5rem 0;
+        }
+        .card-item i{
+            height: 3rem;
+            width: 3rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.25rem;
+            color: #16a34a;
+            border-radius: 8px;
+            background-color: rgb(204, 234, 204);
+        }
+        #hero{
+            background-image: linear-gradient(to bottom right, #f0fdf4, #d1fae5);
+        }
+        .menu{
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+
+        }
+        .menu.open{
+            max-height: 25rem;
+        }
+    </style>
+</head>
+<body>
+    <!--Navigation-->
+    <nav id="nav-bar">
+        <div class="flex p-2 justify-between items-center ">
+            <div class="logo">
+                <a href="#">
+                    <img src="logo.png" alt="QuickSite logo" class="h-16 mx-4">
+                </a>
+            </div>
+            <div class=" nav-links hidden lg:flex">
+                <ul class="flex justify-between">
+                    <li class="nav-item"><a href="#hero" class="nav-link">Home</a></li>
+                    <li class="nav-item"><a href="#about" class="nav-link">About</a></li>
+                    <li class="nav-item"><a href="#features" class="nav-link">Features</a></li>
+                    <li class="nav-item"><a href="#pricing" class="nav-link">Pricing</a></li>
+                </ul>
+                <button class="bg-emerald-600 text-white font-semibold text-base px-4 py-2 rounded-lg mx-2 hover:bg-emerald-800">Get Started</button>
+            </div>
+            <!--Menu icon toggle-->
+            <div id="menu-icon" class="block cursor-pointer text-xl mx-4 lg:hidden">
+                <i class="fa-solid fa-bars"></i>
+            </div>
+        </div>
+        <!--small screen menu-->
+        <div  id="small-menu" class="menu lg:hidden py-2">
+            <div>
+                <ul class="flex gap-2 flex-col justify-between items-center p-4">
+                    <li class="nav-item"><a href="#hero" class="nav-link">Home</a></li>
+                    <li class="nav-item"><a href="#about" class="nav-link">About</a></li>
+                    <li class="nav-item"><a href="#features" class="nav-link">Features</a></li>
+                    <li class="nav-item"><a href="#pricing" class="nav-link">Pricing</a></li>
+                </ul>
+                <button class="bg-emerald-600 text-white font-semibold text-base px-4 py-2 rounded-lg mx-2 hover:bg-emerald-800">Get Started</button>
+            </div>
+        </div>  
+    </nav>
+    <!--Hero Section-->
+    <section id="hero" class="h-screen flex items-center justify-center ">
+        <div class="max-w-3xl text-center">
+            <h1 class="text-4xl md:text-6xl font-extrabold mb-3 text-gray-900 tracking-tight">Your Website</h1>
+            <h1 class="text-3xl md:text-5xl font-bold mb-6 text-emerald-600">Live in 5 mins</h1>
+            <p class="mb-8 text-base md:text-lg text-gray-600 leading-relaxed">Launch professional, mobile-friendly landing pages instantly 
+                with our AI-powered platform. 
+                No coding. No clunky builders. Just results.
+            </p>
+            <button class="bg-emerald-600 text-white font-semibold text-lg px-8 py-4 rounded-lg shadow-lg hover:bg-emerald-800
+                transition-all duration-300 hover:-translate-y-[5px]
+            ">Get Started <i class="fa-solid fa-arrow-right"></i></button>
+        </div>
+    </section>
+
+    <!--About section-->
+    <section id="about" class="py-16">
+        <div>
+            <div class="text-center max-w-6xl mx-auto p-1">
+                <h1 class="text-4xl md:text-5xl font-bold mb-8">Shaping the Future of Web Development</h1>
+                <p class="text-base md:text-lg mb-4">Since our launch on March 1, 2024, QuickSite has been revolutionizing how startups and small businesses establish their online presence. 
+                    Our AI-powered platform eliminates the complexity of traditional website builders, replacing hours of work with minutes of effortless creation.</p>
+
+                <p class="text-base md:text-lg mb-8">We believe every business deserves a professional web presence without the technical barriers. 
+                    That's why we've made our core platform free forever, with AI-driven continuous improvements ensuring your site stays ahead of the curve.</p>
+            </div>
+            <div class="flex justify-between border-black max-w-2xl mx-auto p-2">
+                <div class="text-center">
+                    <h1 class="text-emerald-600 text-2xl md:text-3xl font-bold">5 min</h1>
+                    <p class="text-xs md:text-sm">Average Launch time</p>
+                </div>
+                <div class="text-center">
+                    <h1 class="text-emerald-600 text-2xl md:text-3xl font-bold">100%</h1>
+                    <p class="text-xs md:text-sm">Mobile Optimized</p>
+                </div>
+                <div class="text-center">
+                    <h1 class="text-emerald-600 text-2xl md:text-3xl font-bold">1 Year</h1>
+                    <p class="text-xs md:text-sm">Free Hosting</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!--Features section-->
+    <section id="features" class="py-16">
+        <div class="text-center pt-2">
+            <h1 class="text-4xl md:text-5xl font-bold mb-8">Everything You Need to Launch Fast</h1>
+            <p class="text-base md:text-xl mb-4">Our AI-powered platform handles the complexity so you can focus on your business</p>
+        </div>
+        <div id="card-section" class="grid  md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto p-1">
+            <div class="card-item">
+                <i class="fa-regular fa-clock"></i>
+                <h3>5-minute Launch</h3>
+                <p>From idea to live website in just 5 minutes. 
+                    Our AI does the heavy lifting while you watch your vision come to life.</p>
+            </div>
+            <div class="card-item">
+                <i class="fa-solid fa-robot"></i>
+                <h3>AI-Powered Design</h3>
+                <p>No design skills needed. 
+                    Our AI creates professional, conversion-optimized layouts tailored to your brand.</p>
+            </div>
+            <div class="card-item">
+                <i class="fa-solid fa-globe"></i>
+                <h3>Free Custom Domain</h3>
+                <p>Purchase your domain and get 1 year of free hosting. 
+                    Your professional web presence starts here.</p>
+            </div>
+            <div class="card-item">
+                <i class="fa-solid fa-bolt"></i>                
+                <h3>No Coding Required</h3>
+                <p>Skip the complex coding and clunky visual builders.
+                     Just describe what you need and watch it happen.</p>
+            </div>
+            <div class="card-item">
+                <i class="fa-solid fa-mobile-screen-button"></i>
+                <h3>Mobile-First</h3>
+                <p>Every site is optimized for mobile, tablet, and desktop. 
+                    Your visitors get a perfect experience everywhere.</p>
+            </div>
+            <div class="card-item">
+                <i class="fa-solid fa-robot"></i>
+                <h3>AI-Improvements</h3>
+                <p>Continuous AI-powered enhancements keep your site fresh, 
+                    fast, and ahead of the competition.</p>
+            </div>
+        </div>
+    </section>
+
+    <!--Pricing section-->
+    <section id="pricing" class="py-16">
+        <div class="text-center pt-2 mb-12">
+            <h1 class="text-4xl md:text-5xl  font-bold mb-4">Simple, Transparent Pricing</h1>
+            <p class="text-base md:text-lg">Start free forever. Upgrade when you need more.</p>
+        </div>
+        <div class="grid md:grid-cols-2 gap-8 max-w-4xl m-auto p-1">
+            <div class="pt-6 border-2 border-gray-300 rounded-lg p-4 md:hover:scale-105 transition-all duration-300 cursor-pointer">
+                <div class="space-y-6">
+                    <div>
+                        <h3 class="text-xl font-bold mb-2">Basic</h3>
+                        <div class="flex items-baseline gap-2">
+                            <span class="text-4xl font-bold text-[#139e67]" >Free</span>
+                            <span class="text-base">forever</span> 
+                        </div>
+                    </div>
+                    <ul class="space-y-3">
+                        <li class="flex items-start gap-3"> <i class="fa-solid fa-check w-5 h-5 mt-0.5 text-[#139e67]"></i> Static website creation</li>
+                        <li class="flex items-start gap-3"><i class="fa-solid fa-check w-5 h-5 mt-0.5 text-[#139e67]"></i>AI powered design</li>
+                        <li class="flex items-start gap-3"><i class="fa-solid fa-check w-5 h-5 mt-0.5 text-[#139e67]"></i>mobile-friendly pages</li>
+                        <li class="flex items-start gap-3"><i class="fa-solid fa-check w-5 h-5 mt-0.5 text-[#139e67]"></i>1 year free hosting</li>
+                        <li class="flex items-start gap-3"><i class="fa-solid fa-check w-5 h-5 mt-0.5 text-[#139e67]"></i>Custom domain support</li>
+                    </ul>
+                    <button class="w-full py-2 bg-emerald-600 text-white font-semibold text-lg rounded-lg hover:bg-emerald-800">Get Started Free</button>
+                </div>
+                
+            </div>
+            <div class="pt-6 border-2 border-[#139e67] rounded-lg p-4 relative md:hover:scale-105 transition-all duration-300 cursor-pointer">
+                <p class="text-white rounded-bl-lg bg-emerald-600 w-fit p-1 font-semibold absolute top-0 right-0">Popular</p>
+                <div class="space-y-6">
+                    <div>
+                        <h3 class="text-xl font-bold mb-2">Premium</h3>
+                        <div class="flex items-baseline gap-2">
+                            <span class="text-4xl font-bold text-[#139e67]">Custom</span>
+                            <span class="text-base">pricing</span> 
+                        </div>
+                    </div>
+                    <ul class="space-y-3">
+                        <li class="flex items-start gap-3"> <i class="fa-solid fa-check w-5 h-5 mt-0.5 text-[#139e67]"></i>Everything in Basic</li>
+                        <li class="flex items-start gap-3"><i class="fa-solid fa-check w-5 h-5 mt-0.5 text-[#139e67]"></i>Advanced AI features</li>
+                        <li class="flex items-start gap-3"><i class="fa-solid fa-check w-5 h-5 mt-0.5 text-[#139e67]"></i>Priority support</li>
+                        <li class="flex items-start gap-3"><i class="fa-solid fa-check w-5 h-5 mt-0.5 text-[#139e67]"></i>Custom integrations</li>
+                        <li class="flex items-start gap-3"><i class="fa-solid fa-check w-5 h-5 mt-0.5 text-[#139e67]"></i>Analytics & insights</li>
+                    </ul>
+                    <button class="w-full py-2 bg-emerald-600 text-white font-semibold text-lg rounded-lg hover:bg-emerald-800">Contact Sales</button>
+                </div>
+            </div> 
+        </div>
+    </section>
+    <section id="join" class="bg-gradient-to-r from-emerald-600 to-green-500 text-white text-white py-16">
+        <div class="max-w-4xl mx-auto text-center space-y-8">
+            <h1 class="text-4xl md:text-5xl font-extrabold">Ready to Launch Your Website?</h1>
+            <p class="text-base md:text-lg">Join thousands of startups and small businesses who trust QuickSite for their web presence.</p>
+            <button class="bg-white text-green-700 font-semibold text-lg px-8 py-4 rounded-lg shadow-lg hover:opacity-80
+                transition-all duration-300 hover:-translate-y-[5px]">Start Building Now</button>
+            <p class="text-sm text-green-100">Launched March 1, 2024 • Trusted by startups worldwide</p>
+        </div>
+    </section>
+  
+    <script>
+        const icon = document.getElementById("menu-icon")
+        const menu = document.getElementById("small-menu")
+
+        //Mobile menu dropdown
+        icon.addEventListener('click', ()=>{
+            menu.classList.toggle('open')
+        })
+    </script>
+</body>
+</html>
