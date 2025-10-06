@@ -89,6 +89,24 @@
         .menu.open{
             max-height: 25rem;
         }
+        .social-icon{
+            width:3rem;
+            height:3rem;
+            color: #16a34a;
+            background-color: rgb(204, 234, 204);
+            border-radius: 8px;;
+            font-size: 1.25rem;
+            display: flex;
+            align-items: center;
+            justify-content: center; 
+            transition: all 0.3s;
+        }
+        .social-icon:hover{
+            background-color:#16a34a;
+            color: white;
+            transform: translateY(-5px);
+            cursor: pointer;
+        }
     </style>
 </head>
 <body>
@@ -96,7 +114,7 @@
     <nav id="nav-bar">
         <div class="flex p-2 justify-between items-center ">
             <div class="logo">
-                <a href="#">
+                <a href="#home">
                     <img src="logo.png" alt="QuickSite logo" class="h-16 mx-4">
                 </a>
             </div>
@@ -265,6 +283,7 @@
             </div> 
         </div>
     </section>
+    <!--Join section-->
     <section id="join" class="bg-gradient-to-r from-emerald-600 to-green-500 text-white text-white py-16">
         <div class="max-w-4xl mx-auto text-center space-y-8">
             <h1 class="text-4xl md:text-5xl font-extrabold">Ready to Launch Your Website?</h1>
@@ -274,7 +293,52 @@
             <p class="text-sm text-green-100">Launched March 1, 2024 • Trusted by startups worldwide</p>
         </div>
     </section>
-  
+    <!--Footer section-->
+    <section id="footer" class="py-8">
+        <div class="grid md:grid-cols-3 gap-8 p-4">
+            <div class="flex flex-col">
+                <div class="flex items-center mb-2">
+                    <img src="logo.png" alt="Qucksite logo" class="h-16 w-18"/>
+                    <h4 class="text-emerald-800 font-extrabold text-2xl">QuickSite</h4>
+                </div>
+                <div>
+                    <p class="text-base mb-5">AI-powered website builder revolutionizing how individuals and businesses create their online presence.</p>
+                </div>
+                <div class="flex gap-3">
+                    <a class="social-icon"><i class="fa-brands fa-twitter"></i></a>
+                    <a class="social-icon"><i class="fa-brands fa-linkedin"></i></a>
+                    <a class="social-icon"><i class="fa-brands fa-discord"></i></a>
+                    <a class="social-icon"> <i class="fa-brands fa-github"></i></a>
+                </div>
+            </div>
+                <div class="space-y-8 md:space-y-0 md:flex md:justify-around">
+                    <div class="space-y-2">
+                        <h5 class="text-xl font-semibold mb-1">Product</h5>
+                        <ul class="space-y-2">
+                            <li><a href="#features" class="text-base">Features</a></li>
+                            <li><a href="#pricing" class="text-base">Pricing</a></li>
+                        </ul>
+                    </div>
+                    <div class="space-y-2">
+                        <h5 class="text-xl font-semibold mb-1">Company</h5>
+                        <ul class="space-y-2">
+                            <li><a href="#features" class="text-base">About</a></li>
+                            <li><a href="#" class="text-base">Contact</a></li>
+                        </ul>
+                    </div>
+             </div>
+            <div class="space-y-2">
+                <h5 class="text-xl font-semibold mb-1">Connect</h5>
+                <ul class="space-y-2">
+                    <li class="text-base"> <i class="fa-solid fa-envelope"></i>&nbsp hello@quicksite.space</li>
+                    <li class="text-base"><i class="fa-solid fa-location-dot"></i>&nbsp Australia</li>
+                </ul>
+            </div>
+        </div>
+        <div class="text-sm text-center pt-8">
+            © 2025 QuickSite. All rights reserved.
+        </div>
+    </section>
     <script>
         const icon = document.getElementById("menu-icon")
         const menu = document.getElementById("small-menu")
