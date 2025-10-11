@@ -30,7 +30,7 @@
             backdrop-filter: blur(8px);
             background-color: rgba(255,255,255,0.9);
             box-shadow: 0 2px 8px rgba(0,0,0,0.05);
-            z-index: 10;
+            z-index: 100;
         }
         .nav-item{
             border-radius: 0.5rem;
@@ -63,7 +63,7 @@
             font-size: 1.25rem;
             margin: 0.5rem 0;
         }
-        .card-item i{
+        .card-item i, .star-icon{
             height: 3rem;
             width: 3rem;
             display: flex;
@@ -112,10 +112,10 @@
 <body>
     <!--Navigation-->
     <nav id="nav-bar">
-        <div class="flex p-2 justify-between items-center ">
+        <div class="flex justify-between items-center ">
             <div class="logo">
                 <a href="#home">
-                    <img src="logo.png" alt="QuickSite logo" class="h-16 mx-4">
+                    <img src="logo.png" alt="QuickSite logo" class="h-20 w-20 mx-4 max-md:mt-2">
                 </a>
             </div>
             <div class=" nav-links hidden lg:flex">
@@ -124,11 +124,13 @@
                     <li class="nav-item"><a href="#about" class="nav-link">About</a></li>
                     <li class="nav-item"><a href="#features" class="nav-link">Features</a></li>
                     <li class="nav-item"><a href="#pricing" class="nav-link">Pricing</a></li>
+                    <li class="nav-item"><a href="#team" class="nav-link">Join Team</a></li>
                 </ul>
-                <button class="bg-emerald-600 text-white font-semibold text-base px-4 py-2 rounded-lg mx-2 hover:bg-emerald-800">Get Started</button>
+                <a class="bg-emerald-600 text-white font-semibold text-base px-4 py-2 rounded-lg mx-2 hover:bg-emerald-800"
+                href="https://www.linkedin.com/company/quicksite-space/" target="_blank">Get Started</a>
             </div>
             <!--Menu icon toggle-->
-            <div id="menu-icon" class="block cursor-pointer text-xl mx-4 lg:hidden">
+            <div id="menu-icon" class="block cursor-pointer text-xl mx-8 lg:hidden">
                 <i class="fa-solid fa-bars"></i>
             </div>
         </div>
@@ -139,27 +141,33 @@
                     <li class="nav-item"><a href="#hero" class="nav-link">Home</a></li>
                     <li class="nav-item"><a href="#about" class="nav-link">About</a></li>
                     <li class="nav-item"><a href="#features" class="nav-link">Features</a></li>
-                    <li class="nav-item"><a href="#pricing" class="nav-link">Pricing</a></li>
+                    <li class="nav-item"><a href="#pricing" class="nav-link">Pricings</a></li>
+                    <li class="nav-item"><a href="#team" class="nav-link">Join Team</a></li>
                 </ul>
-                <button class="bg-emerald-600 text-white font-semibold text-base px-4 py-2 rounded-lg mx-2 hover:bg-emerald-800">Get Started</button>
+                <a class="bg-emerald-600 text-white font-semibold text-base px-4 py-2 rounded-lg mx-2 hover:bg-emerald-800" 
+                href="https://www.linkedin.com/company/quicksite-space/" target="_blank">Get Started</a>
             </div>
         </div>  
     </nav>
     <!--Hero Section-->
-    <section id="hero" class="h-screen flex items-center justify-center ">
-        <div class="max-w-3xl text-center">
+    <section id="hero" class="relative h-screen flex items-center justify-center ">
+        <!--image overlay-->
+        <div class="absolute inset-0 opacity-10 z-0">
+            <img src="hero-bg.jpg" alt="hero-background" class="w-full h-full object-cover">
+        </div>
+        <!--hero content-->
+        <div class="relative z-10 max-w-3xl text-center">
             <h1 class="text-4xl md:text-6xl font-extrabold mb-3 text-gray-900 tracking-tight">Your Website</h1>
             <h1 class="text-3xl md:text-5xl font-bold mb-6 text-emerald-600">Live in 5 mins</h1>
-            <p class="mb-8 text-base md:text-lg text-gray-600 leading-relaxed">Launch professional, mobile-friendly landing pages instantly 
+            <p class="mb-8 text-base md:text-lg text-gray-900 leading-relaxed">Launch professional, mobile-friendly landing pages instantly 
                 with our AI-powered platform. 
                 No coding. No clunky builders. Just results.
             </p>
-            <button class="bg-emerald-600 text-white font-semibold text-lg px-8 py-4 rounded-lg shadow-lg hover:bg-emerald-800
-                transition-all duration-300 hover:-translate-y-[5px]
-            ">Get Started <i class="fa-solid fa-arrow-right"></i></button>
+            <a class="inline-block bg-emerald-600 text-white font-semibold text-lg px-8 py-4 rounded-lg shadow-lg cursor-pointer hover:bg-emerald-800
+                transition-all duration-300 hover:-translate-y-[5px]" 
+                href="https://www.linkedin.com/company/quicksite-space/" target="_blank">Get Started <i class="fa-solid fa-arrow-right"></i></a>
         </div>
     </section>
-
     <!--About section-->
     <section id="about" class="py-16">
         <div>
@@ -251,11 +259,11 @@
                         </div>
                     </div>
                     <ul class="space-y-3">
-                        <li class="flex items-start gap-3"> <i class="fa-solid fa-check w-5 h-5 mt-0.5 text-[#139e67]"></i> Static website creation</li>
-                        <li class="flex items-start gap-3"><i class="fa-solid fa-check w-5 h-5 mt-0.5 text-[#139e67]"></i>AI powered design</li>
-                        <li class="flex items-start gap-3"><i class="fa-solid fa-check w-5 h-5 mt-0.5 text-[#139e67]"></i>mobile-friendly pages</li>
-                        <li class="flex items-start gap-3"><i class="fa-solid fa-check w-5 h-5 mt-0.5 text-[#139e67]"></i>1 year free hosting</li>
-                        <li class="flex items-start gap-3"><i class="fa-solid fa-check w-5 h-5 mt-0.5 text-[#139e67]"></i>Custom domain support</li>
+                        <li class="flex items-start gap-4"><i class="fa-solid fa-check mt-0.5 text-[#139e67]"></i> Static website creation</li>
+                        <li class="flex items-start gap-4"><i class="fa-solid fa-check mt-0.5 text-[#139e67]"></i>AI powered design</li>
+                        <li class="flex items-start gap-4"><i class="fa-solid fa-check mt-0.5 text-[#139e67]"></i>mobile-friendly pages</li>
+                        <li class="flex items-start gap-4"><i class="fa-solid fa-check mt-0.5 text-[#139e67]"></i>1 year free hosting</li>
+                        <li class="flex items-start gap-3"><i class="fa-solid fa-check mt-0.5 text-[#139e67]"></i>Custom domain support</li>
                     </ul>
                     <button class="w-full py-2 bg-emerald-600 text-white font-semibold text-lg rounded-lg hover:bg-emerald-800">Get Started Free</button>
                 </div>
@@ -272,19 +280,183 @@
                         </div>
                     </div>
                     <ul class="space-y-3">
-                        <li class="flex items-start gap-3"> <i class="fa-solid fa-check w-5 h-5 mt-0.5 text-[#139e67]"></i>Everything in Basic</li>
-                        <li class="flex items-start gap-3"><i class="fa-solid fa-check w-5 h-5 mt-0.5 text-[#139e67]"></i>Advanced AI features</li>
-                        <li class="flex items-start gap-3"><i class="fa-solid fa-check w-5 h-5 mt-0.5 text-[#139e67]"></i>Priority support</li>
-                        <li class="flex items-start gap-3"><i class="fa-solid fa-check w-5 h-5 mt-0.5 text-[#139e67]"></i>Custom integrations</li>
-                        <li class="flex items-start gap-3"><i class="fa-solid fa-check w-5 h-5 mt-0.5 text-[#139e67]"></i>Analytics & insights</li>
+                        <li class="flex items-start gap-4"><i class="fa-solid fa-check mt-0.5 text-[#139e67]"></i>Everything in Basic</li>
+                        <li class="flex items-start gap-4"><i class="fa-solid fa-check mt-0.5 text-[#139e67]"></i>Advanced AI features</li>
+                        <li class="flex items-start gap-4"><i class="fa-solid fa-check mt-0.5 text-[#139e67]"></i>Priority support</li>
+                        <li class="flex items-start gap-4"><i class="fa-solid fa-check mt-0.5 text-[#139e67]"></i>Custom integrations</li>
+                        <li class="flex items-start gap-4"><i class="fa-solid fa-check mt-0.5 text-[#139e67]"></i>Analytics & insights</li>
                     </ul>
                     <button class="w-full py-2 bg-emerald-600 text-white font-semibold text-lg rounded-lg hover:bg-emerald-800">Contact Sales</button>
                 </div>
             </div> 
         </div>
     </section>
+     <!--The team-->
+     <section id="team" class="py-16">
+            <div class="text-center pt-2">
+                <h1 class="text-4xl md:text-5xl font-bold mb-4">Who We Need</h1>
+                <p class="text-base md:text-xl mb-4">Be part of building the future of web development</p>
+            </div>
+            <div class="grid gap-8 lg:grid-cols-2 max-w-6xl mx-auto p-4"> 
+                <div class="p-4 border-2 border-[#139e67] rounded-lg space-y-6">
+                    <div class="flex  items-center gap-4">
+                        <i class="fa-solid fa-star star-icon"></i>
+                        <div>
+                            <h3 class="text-2xl font-bold">Team Lead Volunteers</h3>
+                            <p class="text-base">3+ years experience required</p>
+                        </div>
+                    </div>
+                    <div class="space-y-3 mt-5">
+                        <p>If you have 3+ years of software development or Data science experience with LLM, 
+                            you can be considered a Dev/DS lead and join as a volunteer.</p>
+                        <p>You will be in charge of junior devs while being hands-on yourself! 
+                            You will have to lead by example and help others.</p>  
+                    </div>
+                    <div class="mt-4 space-y-3">
+                        <p class="font-bold">Join us if you want to:</p>
+                        <ul class="space-y-3 pl-4">
+                            <li class="flex items-start gap-3">
+                                <i class="fa-solid fa-check mt-0.5 text-[#139e67]"></i>
+                                <p><strong>a vital part of our start-up:</strong>  Early impactors will have preferential seats on the board and early employment opportunities.</p>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <i class="fa-solid fa-check mt-0.5 text-[#139e67]"></i>
+                                <p><strong>Become a leader:</strong> Be in charge of others and learn more by helping others.</p>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <i class="fa-solid fa-check mt-0.5 text-[#139e67]"></i>
+                                <p><strong>Learn how to build a start-up:</strong> How to find like-minded people, energize, mobilize and steam ahead.</p>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <i class="fa-solid fa-check mt-0.5 text-[#139e67]"></i>
+                                <p><strong>Work in an Agile development team:</strong> Socialize and build your professional network further.</p>
+                            </li>
+                        </ul>
+                    </div>
+                    <hr>
+                    <div class="space-y-3">
+                        <p class="font-bold">Be ready to commit</p>
+                        <ul class="space-y-3 pl-4">
+                            <li class="flex items-start gap-3">
+                                <i class="fa-solid fa-check mt-0.5 text-[#139e67]"></i>
+                                <p>3 meetings per week</p>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <i class="fa-solid fa-check mt-0.5 text-[#139e67]"></i>
+                                <p>Be responsive on Discord</p>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <i class="fa-solid fa-check mt-0.5 text-[#139e67]"></i>
+                                <p>Code reviews & mentoring</p>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <i class="fa-solid fa-check mt-0.5 text-[#139e67]"></i>
+                                <p>Help with collaboration & teamwork</p>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <i class="fa-solid fa-check mt-0.5 text-[#139e67]"></i>
+                                <p>Help setting & achieving development objectives</p>
+                            </li>
+                        </ul>
+                    </div>
+                    <button class="w-full py-2 bg-emerald-600 text-white font-semibold text-lg rounded-lg hover:bg-emerald-800">Apply as Lead</button>
+                </div>
+                <div class="p-4 border-2 border-[#139e67] rounded-lg space-y-6">
+                    <div class="flex  items-center gap-4">
+                        <i class="fa-solid fa-code star-icon"></i>
+                        <div>
+                            <h3 class="text-2xl font-bold">Interns (CodeCamp)</h3>
+                            <p class="text-base">Real-world experience program</p>
+                        </div>
+                    </div>
+                    <div class="space-y-3 mt-5">
+                        <p>Our CodeCamp is designed to help junior developers gain hands-on experience in real-world AI and 
+                            web development while helping us build our product.</p>
+                        <p>Yes, you will be participating in our core team development process 
+                            working on tasks suitable to your level and according to your interests.</p>  
+                    </div>
+                    <div class="mt-4 space-y-3">
+                        <p class="font-bold">Join us if you want to:</p>
+                        <ul class="space-y-3 pl-4">
+                            <li class="flex items-start gap-3">
+                                <i class="fa-solid fa-check mt-0.5 text-[#139e67]"></i>
+                                <p><strong>Develop your skills in:</strong> React, TypeScript, NodeJS, and Firebase, and Google Cloud.</p>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <i class="fa-solid fa-check mt-0.5 text-[#139e67]"></i>
+                                <p><strong>Learn AI-powered automation</strong> and work with LLMs (Large Language Models) like OpenAI API, Claude and Gemini.</p>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <i class="fa-solid fa-check mt-0.5 text-[#139e67]"></i>
+                                <p><strong>Get mentorship & feedback</strong> to improve your coding and collaboration skills</p>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <i class="fa-solid fa-check mt-0.5 text-[#139e67]"></i>
+                                <p><strong>Work in an Agile development team</strong> and contribute to a real AI startup</p>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <i class="fa-solid fa-check mt-0.5 text-[#139e67]"></i>
+                                <p><strong>Opportunity to become an early team member</strong> when we secure funding</p>
+                            </li>
+                        </ul>
+                    </div>
+                    <hr>
+                    <div class="space-y-3">
+                        <p class="font-bold">Program Details:</p>
+                        <ul class="space-y-3 pl-4">
+                            <li class="flex items-start gap-3">
+                                <p><strong>Start Date:</strong> First week of May (3-month program)</p>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <p><strong> Time Commitment:</strong> At least 10 hours per week</p>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <p><strong>Cost:</strong> $25 per week</p>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <p><strong>Format:</strong>Remote via Google Meet + Discord</p>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <p><strong>Flexibility:</strong> No lock-in, drop out anytime</p>
+                            </li>
+                        </ul>
+                    </div>
+                    <button class="w-full py-2 bg-emerald-600 text-white font-semibold text-lg rounded-lg hover:bg-emerald-800">Apply as Lead</button>
+                </div>
+           </div>
+           <div class="border-2 max-w-6xl mx-auto space-y-6 mt-8 rounded-lg p-4">
+                <div class="space-y-3 text-center pt-6">
+                    <h3 class="text-2xl font-bold">
+                        <i class="fa-solid fa-users text-emerald-600"></i>&nbsp Team Structure & Future
+                    </h3>
+                    <p>Growth based on merit and contribution</p>
+                </div>
+                <div class="grid md:grid-cols-3 gap-6">
+                    <div class="text-center flex flex-col items-center gap-2">
+                        <i class="fa-solid fa-user-tie star-icon"></i>
+                        <h4 class="text-base font-bold">Founder/Architect</h4>
+                        <p>Leads vision, architecture, and core development</p>
+                    </div>
+                    <div class="text-center flex flex-col items-center gap-2">
+                        <i class="fa-solid fa-rocket star-icon"></i>
+                        <h4 class="text-base font-bold">Dev Leads</h4>
+                        <p>Hosts meetings, develops leadership skills, and contributes to the product</p>
+                    </div>
+                    <div class="text-center flex flex-col items-center gap-2">
+                        <i class="fa-solid fa-code star-icon"></i>
+                        <h4 class="text-base font-bold">Code Campers</h4>
+                        <p>Junior devs learning both technical and team collaboration skills</p>
+                    </div>
+                </div>
+                <div class="bg-gradient-to-r from-emerald-600 to-green-500 text-white text-center p-6">
+                    <i class="fa-solid fa-bolt text-3xl"></i>
+                    <h3 class="text-lg font-bold mb-2">Growth Opportunities</h3>
+                    <p>You can progress to higher positions based purely on merit and contribution, not prior experience</p>
+                </div>
+            </div>
+     </section>
     <!--Join section-->
-    <section id="join" class="bg-gradient-to-r from-emerald-600 to-green-500 text-white text-white py-16">
+    <section id="join" class="bg-gradient-to-r from-emerald-600 to-green-500 text-white py-16">
         <div class="max-w-4xl mx-auto text-center space-y-8">
             <h1 class="text-4xl md:text-5xl font-extrabold">Ready to Launch Your Website?</h1>
             <p class="text-base md:text-lg">Join thousands of startups and small businesses who trust QuickSite for their web presence.</p>
@@ -297,16 +469,15 @@
     <section id="footer" class="py-8">
         <div class="grid md:grid-cols-3 gap-8 p-4">
             <div class="flex flex-col">
-                <div class="flex items-center mb-2">
-                    <img src="logo.png" alt="Qucksite logo" class="h-16 w-18"/>
-                    <h4 class="text-emerald-800 font-extrabold text-2xl">QuickSite</h4>
+                <div>
+                    <img src="logo.png" alt="Qucksite logo" class="h-24 w-24"/>
                 </div>
                 <div>
                     <p class="text-base mb-5">AI-powered website builder revolutionizing how individuals and businesses create their online presence.</p>
                 </div>
                 <div class="flex gap-3">
                     <a class="social-icon"><i class="fa-brands fa-twitter"></i></a>
-                    <a class="social-icon"><i class="fa-brands fa-linkedin"></i></a>
+                    <a class="social-icon" href="https://www.linkedin.com/company/quicksite-space/" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
                     <a class="social-icon"><i class="fa-brands fa-discord"></i></a>
                     <a class="social-icon"> <i class="fa-brands fa-github"></i></a>
                 </div>
