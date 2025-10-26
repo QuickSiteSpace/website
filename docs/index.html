@@ -23,7 +23,7 @@
         }
         
         #nav-bar{
-            position: fixed;
+            position: sticky;
             width: 100%;
             top: 0;
             left: 0;
@@ -112,7 +112,7 @@
 <body>
     <!--Navigation-->
     <nav id="nav-bar">
-        <div class="flex justify-between items-center ">
+        <div class="flex justify-between items-center max-w-7xl mx-auto">
             <div class="logo">
                 <a href="#home">
                     <img src="logo.png" alt="QuickSite logo" class="h-20 w-20 mx-4 max-md:mt-2">
@@ -130,7 +130,7 @@
                 href="https://www.linkedin.com/company/quicksite-space/" target="_blank">Get Started</a>
             </div>
             <!--Menu icon toggle-->
-            <div id="menu-icon" class="block cursor-pointer text-xl mx-8 lg:hidden">
+            <div id="menu-icon" class="block cursor-pointer text-xl mr-4 lg:hidden">
                 <i class="fa-solid fa-bars"></i>
             </div>
         </div>
@@ -150,7 +150,7 @@
         </div>  
     </nav>
     <!--Hero Section-->
-    <section id="hero" class="relative h-screen flex items-center justify-center">
+    <section id="hero" class="relative min-h-screen flex items-center justify-center">
         <!--image overlay-->
         <div class="absolute inset-0 opacity-10 z-0">
             <img src="hero-bg.jpg" alt="hero-background" class="w-full h-full object-cover">
