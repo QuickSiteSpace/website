@@ -79,9 +79,9 @@
         #hero{
             background: linear-gradient(
                 120deg,
-                rgb(150, 219, 187),
-                rgb(44, 178, 140),
-                rgb(148, 228, 130)
+                rgb(48, 129, 84),
+                rgb(21, 133, 75),
+                rgb(80, 215, 139)
             );  
             background-size: 300% 300%;
             background-position: left top;
@@ -95,16 +95,21 @@
                 background-position: right bottom;
             }
         }
-        .menu{
-            max-height: 0;
-            overflow: hidden;
-            transition: max-height 0.3s ease;
+        #small-menu{
+            display: none;    
+        }
+         #small-menu.open{
             display: flex;
+            overflow: hidden;
             flex-direction: column;
             align-items: center;
-
-        }
-        .menu.open{
+            position: absolute;
+            padding:1rem;
+            top:100%;
+            right: 0;
+            border-radius: 8px;
+            background-color: rgba(255,255,255);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
             max-height: 25rem;
         }
         .social-icon{
@@ -136,7 +141,7 @@
                     <img src="logo.png" alt="QuickSite logo" class="h-20 w-20 mx-4 max-md:mt-2">
                 </a>
             </div>
-            <div class=" nav-links hidden lg:flex">
+            <div class="nav-links hidden lg:flex">
                 <ul class="flex justify-between">
                     <li class="nav-item"><a href="#about" class="nav-link">About</a></li>
                     <li class="nav-item"><a href="#features" class="nav-link">Features</a></li>
@@ -150,9 +155,10 @@
             <div id="menu-icon" class="block cursor-pointer text-xl mr-4 lg:hidden">
                 <i class="fa-solid fa-bars"></i>
             </div>
+            
         </div>
         <!--small screen menu-->
-        <div  id="small-menu" class="menu lg:hidden py-2">
+        <div id="small-menu" class="menu py-2 lg:hidden">
             <div>
                 <ul class="flex gap-2 flex-col justify-between items-center p-4">
                     <li class="nav-item"><a href="#about" class="nav-link">About</a></li>
@@ -170,11 +176,10 @@
         <section id="hero" class="min-h-screen flex items-center justify-center">
             <!--hero content-->
             <div class="z-10 max-w-3xl text-center">
-                <h1 class="text-4xl md:text-7xl font-extrabold mb-3 text-gray-900 tracking-tight">Your Website</h1>
-                <h1 class="text-3xl md:text-6xl font-bold mb-6 text-emerald-700">Live in 5 mins</h1>
-                <p class="mb-8 text-base md:text-lg text-gray-900 leading-relaxed">Launch professional, mobile-friendly landing pages instantly 
-                    with our AI-powered platform. 
-                    No coding. No clunky builders. Just results.
+                <h1 class="text-4xl md:text-7xl font-extrabold mb-3 text-[#0F172A] tracking-tight">Your Website</h1>
+                <h1 class="text-3xl md:text-6xl font-bold mb-6 text-[white]">Live in 5 mins</h1>
+                <p class="mb-8 text-base md:text-lg text-white font-medium leading-relaxed">Launch professional, mobile-friendly landing pages instantly 
+                    with our AI-powered platform. No coding. No clunky builders. Just results.
                 </p>
                 <a class="inline-block bg-emerald-700 text-white font-semibold text-lg px-8 py-4 rounded-lg shadow-lg cursor-pointer hover:bg-emerald-800
                     transition-all duration-300 hover:-translate-y-[5px]" 
@@ -533,10 +538,27 @@
         const icon = document.getElementById("menu-icon")
         const menu = document.getElementById("small-menu")
 
-        //Mobile menu dropdown
+         //Hide/show Mobile menu dropdown
         icon.addEventListener('click', ()=>{
             menu.classList.toggle('open')
         })
+
+        //hide when any link is clicked
+        const navItems = menu.querySelectorAll('.nav-item')
+        navItems.forEach(item => {
+            item.addEventListener("click",()=>{
+                menu.classList.remove("open")
+            })
+            
+        });
+
+        //when window screen size changes from small to large, remove the dropdown menu
+        window.addEventListener('resize',()=>{
+            if(window.innerWidth >= 1024){
+                menu.classList.remove('open')
+            }
+        })
+
     </script>
 </body>
 </html>
