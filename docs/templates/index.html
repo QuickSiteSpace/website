@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="dark">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -8,14 +8,18 @@
   <script src="https://cdn.tailwindcss.com"></script>
   <script>tailwind.config = { darkMode: 'class' }</script>
   <script>
+    // Dark-by-default: <html> already has the dark class baked in, so
+    // there's no flash of light theme while this script runs. We only
+    // remove the class when the user has explicitly chosen light via
+    // the toggle (localStorage qs-theme === "light"). OS preference is
+    // deliberately ignored so first-time visitors always see the dark
+    // gallery identity regardless of their system setting.
     (function () {
       var KEY = 'qs-theme';
       var root = document.documentElement;
       try {
-        var saved = localStorage.getItem(KEY);
-        var prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
-        if (saved === 'dark' || (!saved && prefersDark)) root.classList.add('dark');
-      } catch (e) {}
+        if (localStorage.getItem(KEY) === 'light') root.classList.remove('dark');
+      } catch (e) { /* storage blocked — stay dark */ }
       window.__qsToggleTheme = function () {
         var isDark = root.classList.toggle('dark');
         try { localStorage.setItem(KEY, isDark ? 'dark' : 'light'); } catch (e) {}
