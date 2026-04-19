@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Acme — ship your product faster</title>
+  <meta name="description" content="Acme helps growing teams launch, iterate, and scale without the usual overhead. One simple tool, no setup required.">
+  <meta name="keywords" content="saas, landing, product, startup">
+  <!-- Tailwind CDN is here so the raw file previews correctly when opened
+       directly in a browser. The extension's publish pipeline adds its
+       own shell (with the tailwind.config + theme-init script), so this
+       <script> tag is discarded at import time. -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>tailwind.config = { darkMode: 'class' }</script>
+</head>
+<body class="bg-white dark:bg-gray-900 text-gray-900 dark:text-gray-100">
+
+<header class="bg-white dark:bg-gray-900 border-b border-gray-200 dark:border-gray-800">
+  <div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+    <a href="#" class="flex items-center gap-2 text-gray-900 dark:text-gray-100 font-semibold">
+      <span class="inline-block h-6 w-6 rounded bg-indigo-600 dark:bg-indigo-500"></span>
+      <span>Acme</span>
+    </a>
+    <nav class="hidden sm:flex items-center gap-6 text-sm text-gray-700 dark:text-gray-300">
+      <a href="#features" class="hover:text-gray-900 dark:hover:text-gray-100">Features</a>
+      <a href="#testimonials" class="hover:text-gray-900 dark:hover:text-gray-100">Customers</a>
+      <a href="#pricing" class="hover:text-gray-900 dark:hover:text-gray-100">Pricing</a>
+      <a href="#pricing" class="inline-flex items-center rounded-md bg-indigo-600 hover:bg-indigo-700 dark:bg-indigo-500 dark:hover:bg-indigo-400 px-3 py-1.5 text-white">Get started</a>
+    </nav>
+  </div>
+</header>
+
+<section id="hero" class="bg-white dark:bg-gray-900">
+  <div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 py-20 sm:py-28 text-center">
+    <p class="text-sm font-medium text-indigo-600 dark:text-indigo-400 mb-3">New — AI-assisted workflows</p>
+    <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-gray-900 dark:text-gray-100">Ship your product faster.</h1>
+    <p class="mt-5 max-w-2xl mx-auto text-lg text-gray-600 dark:text-gray-400">Acme helps growing teams launch, iterate, and scale without the usual overhead. One simple tool, no setup required.</p>
+    <div class="mt-8 flex flex-col sm:flex-row items-center justify-center gap-3">
+      <a href="#pricing" class="inline-flex items-center rounded-md bg-indigo-600 hover:bg-indigo-700 dark:bg-indigo-500 dark:hover:bg-indigo-400 px-5 py-3 text-white font-medium">Start free trial</a>
+      <a href="#features" class="inline-flex items-center rounded-md border border-gray-300 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-800 px-5 py-3 text-gray-700 dark:text-gray-300 font-medium">See how it works</a>
+    </div>
+  </div>
+</section>
+
+<section id="features" data-name="Features" data-description="Three-up feature grid" class="bg-gray-50 dark:bg-gray-950 py-16 sm:py-24">
+  <div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+    <div class="max-w-2xl mx-auto text-center">
+      <h2 class="text-3xl font-bold text-gray-900 dark:text-gray-100">Everything you need, nothing you don't</h2>
+      <p class="mt-3 text-gray-600 dark:text-gray-400">A focused toolkit built for small teams that move fast.</p>
+    </div>
+    <div class="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+      <div class="rounded-lg bg-white dark:bg-gray-900 p-6 shadow-sm border border-gray-200 dark:border-gray-800">
+        <div class="h-10 w-10 rounded-md bg-indigo-100 dark:bg-indigo-900/50 text-indigo-600 dark:text-indigo-400 flex items-center justify-center font-semibold">1</div>
+        <h3 class="mt-4 font-semibold text-gray-900 dark:text-gray-100">Fast by default</h3>
+        <p class="mt-2 text-sm text-gray-600 dark:text-gray-400">Sub-second response times across every view. No waiting, no spinners.</p>
+      </div>
+      <div class="rounded-lg bg-white dark:bg-gray-900 p-6 shadow-sm border border-gray-200 dark:border-gray-800">
+        <div class="h-10 w-10 rounded-md bg-indigo-100 dark:bg-indigo-900/50 text-indigo-600 dark:text-indigo-400 flex items-center justify-center font-semibold">2</div>
+        <h3 class="mt-4 font-semibold text-gray-900 dark:text-gray-100">Built to integrate</h3>
+        <p class="mt-2 text-sm text-gray-600 dark:text-gray-400">Works with the tools your team already uses. Zero-config in most cases.</p>
+      </div>
+      <div class="rounded-lg bg-white dark:bg-gray-900 p-6 shadow-sm border border-gray-200 dark:border-gray-800">
+        <div class="h-10 w-10 rounded-md bg-indigo-100 dark:bg-indigo-900/50 text-indigo-600 dark:text-indigo-400 flex items-center justify-center font-semibold">3</div>
+        <h3 class="mt-4 font-semibold text-gray-900 dark:text-gray-100">Secure &amp; private</h3>
+        <p class="mt-2 text-sm text-gray-600 dark:text-gray-400">SOC 2 and SSO out of the box. Your data stays yours.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="testimonials" data-name="Testimonials" data-description="Social proof row" class="bg-white dark:bg-gray-900 py-16 sm:py-24">
+  <div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+    <div class="max-w-2xl mx-auto text-center">
+      <h2 class="text-3xl font-bold text-gray-900 dark:text-gray-100">Teams ship more with Acme</h2>
+    </div>
+    <div class="mt-12 grid gap-6 md:grid-cols-2">
+      <figure class="rounded-lg border border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-900 p-6">
+        <blockquote class="text-gray-700 dark:text-gray-300">"We cut our onboarding time in half. Acme just works."</blockquote>
+        <figcaption class="mt-4 text-sm text-gray-500 dark:text-gray-400">Priya S. — Head of Ops, Bellhop</figcaption>
+      </figure>
+      <figure class="rounded-lg border border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-900 p-6">
+        <blockquote class="text-gray-700 dark:text-gray-300">"The only SaaS tool our engineers haven't complained about."</blockquote>
+        <figcaption class="mt-4 text-sm text-gray-500 dark:text-gray-400">Marcus T. — CTO, Northwind</figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<section id="pricing" data-name="Pricing" data-description="Two-tier pricing" class="bg-gray-50 dark:bg-gray-950 py-16 sm:py-24">
+  <div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+    <div class="max-w-2xl mx-auto text-center">
+      <h2 class="text-3xl font-bold text-gray-900 dark:text-gray-100">Simple pricing</h2>
+      <p class="mt-3 text-gray-600 dark:text-gray-400">Start free. Upgrade when you outgrow it.</p>
+    </div>
+    <div class="mt-12 grid gap-6 md:grid-cols-2 max-w-3xl mx-auto">
+      <div class="rounded-lg bg-white dark:bg-gray-900 p-8 shadow-sm border border-gray-200 dark:border-gray-800">
+        <h3 class="font-semibold text-gray-900 dark:text-gray-100">Starter</h3>
+        <p class="mt-2 text-3xl font-bold text-gray-900 dark:text-gray-100">$0<span class="text-base font-normal text-gray-500 dark:text-gray-400">/mo</span></p>
+        <ul class="mt-6 space-y-2 text-sm text-gray-600 dark:text-gray-400">
+          <li>Up to 3 projects</li>
+          <li>Community support</li>
+          <li>Basic integrations</li>
+        </ul>
+        <a href="#" class="mt-6 inline-flex w-full items-center justify-center rounded-md border border-gray-300 dark:border-gray-700 px-4 py-2 text-gray-700 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-800">Get started</a>
+      </div>
+      <div class="rounded-lg bg-white dark:bg-gray-900 p-8 shadow-sm ring-2 ring-indigo-600 dark:ring-indigo-400">
+        <h3 class="font-semibold text-gray-900 dark:text-gray-100">Team</h3>
+        <p class="mt-2 text-3xl font-bold text-gray-900 dark:text-gray-100">$29<span class="text-base font-normal text-gray-500 dark:text-gray-400">/mo</span></p>
+        <ul class="mt-6 space-y-2 text-sm text-gray-600 dark:text-gray-400">
+          <li>Unlimited projects</li>
+          <li>Priority support</li>
+          <li>SSO &amp; audit logs</li>
+        </ul>
+        <a href="#" class="mt-6 inline-flex w-full items-center justify-center rounded-md bg-indigo-600 hover:bg-indigo-700 dark:bg-indigo-500 dark:hover:bg-indigo-400 px-4 py-2 text-white">Start free trial</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="bg-white dark:bg-gray-900 border-t border-gray-200 dark:border-gray-800">
+  <div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 py-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-sm text-gray-500 dark:text-gray-400">
+    <p>&copy; 2026 Acme, Inc.</p>
+    <nav class="flex items-center gap-6">
+      <a href="#" class="hover:text-gray-900 dark:hover:text-gray-100">Privacy</a>
+      <a href="#" class="hover:text-gray-900 dark:hover:text-gray-100">Terms</a>
+      <a href="#" class="hover:text-gray-900 dark:hover:text-gray-100">Contact</a>
+    </nav>
+  </div>
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Ada Lovelace — Designer &amp; developer</title>
+  <meta name="description" content="Ada Lovelace is an independent designer and developer crafting calm, considered interfaces for founders, studios, and cultural projects.">
+  <meta name="keywords" content="portfolio, designer, developer, freelance, ux, brand, web">
+  <!-- Tailwind CDN is here so the raw file previews correctly when opened
+       directly in a browser. The extension's publish pipeline adds its
+       own shell (with the tailwind.config + theme-init script), so this
+       <script> tag is discarded at import time. -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>tailwind.config = { darkMode: 'class' }</script>
+</head>
+<body class="bg-white dark:bg-gray-900 text-gray-900 dark:text-gray-100">
+
+<header class="bg-white dark:bg-gray-900 border-b border-gray-200 dark:border-gray-800">
+  <div class="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+    <a href="#" class="flex items-center gap-2 text-gray-900 dark:text-gray-100 font-serif text-lg">
+      <span class="inline-flex h-7 w-7 items-center justify-center rounded-full bg-emerald-600 dark:bg-emerald-500 text-white text-xs font-semibold">AL</span>
+      <span>Ada Lovelace</span>
+    </a>
+    <nav class="hidden sm:flex items-center gap-8 text-sm text-gray-700 dark:text-gray-300">
+      <a href="#about" class="hover:text-emerald-600 dark:hover:text-emerald-400">About</a>
+      <a href="#projects" class="hover:text-emerald-600 dark:hover:text-emerald-400">Projects</a>
+      <a href="#contact" class="hover:text-emerald-600 dark:hover:text-emerald-400">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<section id="hero" class="bg-white dark:bg-gray-900">
+  <div class="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8 py-24 sm:py-32">
+    <p class="text-sm font-medium text-emerald-600 dark:text-emerald-400 mb-4 tracking-wide uppercase">Designer &middot; Developer &middot; Maker</p>
+    <h1 class="font-serif text-5xl sm:text-6xl lg:text-7xl font-bold tracking-tight text-gray-900 dark:text-gray-100 leading-tight">Hello, I'm Ada.</h1>
+    <p class="mt-6 max-w-2xl text-xl text-gray-600 dark:text-gray-400 leading-relaxed">I design and build considered digital products for founders, small studios, and cultural institutions — with a soft spot for typography and slow-loading ideas.</p>
+    <div class="mt-10 flex flex-col sm:flex-row items-start sm:items-center gap-4">
+      <a href="#projects" class="inline-flex items-center rounded-md bg-emerald-600 hover:bg-emerald-700 dark:bg-emerald-500 dark:hover:bg-emerald-400 px-6 py-3 text-white font-medium">View projects</a>
+      <a href="#contact" class="inline-flex items-center rounded-md border border-gray-300 dark:border-gray-700 hover:border-emerald-600 dark:hover:border-emerald-400 hover:text-emerald-600 dark:hover:text-emerald-400 px-6 py-3 text-gray-700 dark:text-gray-300 font-medium">Get in touch</a>
+    </div>
+  </div>
+</section>
+
+<section id="about" data-name="About" data-description="Short bio" class="bg-gray-50 dark:bg-gray-950 py-20 sm:py-28">
+  <div class="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
+    <div class="grid gap-12 md:grid-cols-3 items-start">
+      <div class="md:col-span-1">
+        <div class="aspect-square w-40 md:w-full max-w-[220px] rounded-full bg-gradient-to-br from-emerald-300 to-teal-500 dark:from-emerald-700 dark:to-teal-800 flex items-center justify-center text-white font-serif text-5xl shadow-sm">AL</div>
+      </div>
+      <div class="md:col-span-2">
+        <h2 class="font-serif text-3xl sm:text-4xl font-bold text-gray-900 dark:text-gray-100">About</h2>
+        <div class="mt-6 space-y-4 text-gray-600 dark:text-gray-400 leading-relaxed">
+          <p>I'm a designer and developer based in Melbourne, working at the intersection of editorial design and front-end engineering. Over the last decade I've shipped work for bookshops, early-stage founders, a community radio station, and a museum that mostly still uses fax machines.</p>
+          <p>My practice is small on purpose. I care about typographic detail, accessible defaults, and writing HTML that will still parse correctly in ten years. I believe the best websites feel like rooms: calm, legible, and arranged with intent.</p>
+          <p>When I'm not at the keyboard you'll find me printing zines, tending a small balcony garden, or losing at table tennis to anyone willing to play.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="projects" data-name="Projects" data-description="Featured work grid" class="bg-white dark:bg-gray-900 py-20 sm:py-28">
+  <div class="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
+    <div class="max-w-2xl">
+      <h2 class="font-serif text-3xl sm:text-4xl font-bold text-gray-900 dark:text-gray-100">Selected projects</h2>
+      <p class="mt-3 text-gray-600 dark:text-gray-400">A small cross-section of recent work — brand systems, publishing tools, and the occasional side project.</p>
+    </div>
+    <div class="mt-12 grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+      <article class="group">
+        <div class="aspect-video rounded-lg bg-gradient-to-br from-emerald-200 to-teal-400 dark:from-emerald-800 dark:to-teal-900"></div>
+        <h3 class="mt-4 font-serif text-xl font-semibold text-gray-900 dark:text-gray-100">Marginalia Press</h3>
+        <p class="mt-1 text-sm text-gray-600 dark:text-gray-400">A quiet publishing platform for long-form essays and footnotes.</p>
+        <a href="https://example.com/marginalia" class="mt-2 inline-flex items-center text-sm text-emerald-600 dark:text-emerald-400 hover:text-emerald-700 dark:hover:text-emerald-300">Visit site &rarr;</a>
+      </article>
+      <article class="group">
+        <div class="aspect-video rounded-lg bg-gradient-to-br from-teal-200 to-emerald-400 dark:from-teal-800 dark:to-emerald-900"></div>
+        <h3 class="mt-4 font-serif text-xl font-semibold text-gray-900 dark:text-gray-100">Field Notes Radio</h3>
+        <p class="mt-1 text-sm text-gray-600 dark:text-gray-400">Brand system and web player for an independent community broadcaster.</p>
+        <a href="https://example.com/fieldnotes" class="mt-2 inline-flex items-center text-sm text-emerald-600 dark:text-emerald-400 hover:text-emerald-700 dark:hover:text-emerald-300">Visit site &rarr;</a>
+      </article>
+      <article class="group">
+        <div class="aspect-video rounded-lg bg-gradient-to-br from-emerald-300 to-cyan-400 dark:from-emerald-700 dark:to-cyan-900"></div>
+        <h3 class="mt-4 font-serif text-xl font-semibold text-gray-900 dark:text-gray-100">Slowpress CMS</h3>
+        <p class="mt-1 text-sm text-gray-600 dark:text-gray-400">A minimal content tool built for editors who prefer markdown to mayhem.</p>
+        <a href="https://example.com/slowpress" class="mt-2 inline-flex items-center text-sm text-emerald-600 dark:text-emerald-400 hover:text-emerald-700 dark:hover:text-emerald-300">Visit site &rarr;</a>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section id="skills" data-name="Skills" data-description="What I do" class="bg-gray-50 dark:bg-gray-950 py-20 sm:py-28">
+  <div class="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
+    <div class="max-w-2xl">
+      <h2 class="font-serif text-3xl sm:text-4xl font-bold text-gray-900 dark:text-gray-100">What I do</h2>
+      <p class="mt-3 text-gray-600 dark:text-gray-400">A focused toolkit, honed over years of shipping.</p>
+    </div>
+    <div class="mt-10 flex flex-wrap gap-3">
+      <span class="inline-flex items-center rounded-full bg-white dark:bg-gray-900 border border-emerald-200 dark:border-emerald-800 text-emerald-700 dark:text-emerald-300 px-4 py-2 text-sm font-medium">Brand &amp; identity</span>
+      <span class="inline-flex items-center rounded-full bg-white dark:bg-gray-900 border border-emerald-200 dark:border-emerald-800 text-emerald-700 dark:text-emerald-300 px-4 py-2 text-sm font-medium">Art direction</span>
+      <span class="inline-flex items-center rounded-full bg-white dark:bg-gray-900 border border-emerald-200 dark:border-emerald-800 text-emerald-700 dark:text-emerald-300 px-4 py-2 text-sm font-medium">Front-end engineering</span>
+      <span class="inline-flex items-center rounded-full bg-white dark:bg-gray-900 border border-emerald-200 dark:border-emerald-800 text-emerald-700 dark:text-emerald-300 px-4 py-2 text-sm font-medium">Accessibility</span>
+      <span class="inline-flex items-center rounded-full bg-white dark:bg-gray-900 border border-emerald-200 dark:border-emerald-800 text-emerald-700 dark:text-emerald-300 px-4 py-2 text-sm font-medium">Editorial design</span>
+      <span class="inline-flex items-center rounded-full bg-white dark:bg-gray-900 border border-emerald-200 dark:border-emerald-800 text-emerald-700 dark:text-emerald-300 px-4 py-2 text-sm font-medium">Typography</span>
+    </div>
+  </div>
+</section>
+
+<section id="contact" data-name="Contact" data-description="Reach out" class="bg-white dark:bg-gray-900 py-20 sm:py-28">
+  <div class="mx-auto max-w-2xl px-4 sm:px-6 lg:px-8 text-center">
+    <h2 class="font-serif text-4xl sm:text-5xl font-bold text-gray-900 dark:text-gray-100">Let's work together.</h2>
+    <p class="mt-5 text-lg text-gray-600 dark:text-gray-400 leading-relaxed">I take on a handful of projects each year. If you're planning something thoughtful — a small site, a brand refresh, a publication — I'd love to hear about it.</p>
+    <div class="mt-10">
+      <a href="mailto:hello@adalovelace.example" class="inline-flex items-center rounded-md bg-emerald-600 hover:bg-emerald-700 dark:bg-emerald-500 dark:hover:bg-emerald-400 px-6 py-3 text-white font-medium">hello@adalovelace.example</a>
+    </div>
+    <nav class="mt-8 flex flex-wrap items-center justify-center gap-x-6 gap-y-2 text-sm text-gray-600 dark:text-gray-400">
+      <a href="https://github.com/" class="hover:text-emerald-600 dark:hover:text-emerald-400">GitHub</a>
+      <a href="https://linkedin.com/" class="hover:text-emerald-600 dark:hover:text-emerald-400">LinkedIn</a>
+      <a href="https://x.com/" class="hover:text-emerald-600 dark:hover:text-emerald-400">X / Twitter</a>
+    </nav>
+  </div>
+</section>
+
+<footer class="bg-white dark:bg-gray-900 border-t border-gray-200 dark:border-gray-800">
+  <div class="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8 py-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-sm text-gray-500 dark:text-gray-400">
+    <p>&copy; 2026 Ada Lovelace</p>
+    <p>
+      Built with
+      <a href="https://quicksite.space" class="text-emerald-600 dark:text-emerald-400 hover:text-emerald-700 dark:hover:text-emerald-300">QuickSite</a>
+    </p>
+  </div>
+</footer>
+
+</body>
+</html>

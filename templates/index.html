@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>QuickSite templates — live previews</title>
+  <meta name="description" content="Browse live previews of every template you can start from in QuickSite. Click any card to see the full page, then open it in the extension to make it yours.">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>tailwind.config = { darkMode: 'class' }</script>
+  <script>
+    (function () {
+      var KEY = 'qs-theme';
+      var root = document.documentElement;
+      try {
+        var saved = localStorage.getItem(KEY);
+        var prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+        if (saved === 'dark' || (!saved && prefersDark)) root.classList.add('dark');
+      } catch (e) {}
+      window.__qsToggleTheme = function () {
+        var isDark = root.classList.toggle('dark');
+        try { localStorage.setItem(KEY, isDark ? 'dark' : 'light'); } catch (e) {}
+      };
+    })();
+  </script>
+</head>
+<body class="bg-gray-50 dark:bg-gray-950 text-gray-900 dark:text-gray-100 min-h-screen">
+
+<header class="bg-white dark:bg-gray-900 border-b border-gray-200 dark:border-gray-800">
+  <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex items-center justify-between">
+    <a href="/" class="flex items-center gap-2 font-semibold text-gray-900 dark:text-gray-100">
+      <span class="inline-block h-6 w-6 rounded bg-gradient-to-br from-teal-400 to-emerald-700"></span>
+      <span>QuickSite</span>
+    </a>
+    <nav class="flex items-center gap-4 text-sm">
+      <a href="/" class="text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-100">Home</a>
+      <a href="https://github.com/QuickSiteSpace/quicksite" target="_blank" rel="noopener" class="text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-100">GitHub</a>
+      <button type="button" onclick="__qsToggleTheme()" aria-label="Toggle dark mode" class="inline-flex items-center justify-center w-9 h-9 rounded-full bg-gray-100 dark:bg-gray-800 text-gray-900 dark:text-gray-100 border border-gray-200 dark:border-gray-700 hover:scale-105 transition">
+        <span class="qs-light-icon" aria-hidden="true">&#127769;</span>
+        <span class="qs-dark-icon" aria-hidden="true">&#9728;</span>
+      </button>
+    </nav>
+  </div>
+</header>
+
+<main class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-20">
+  <div class="max-w-2xl">
+    <h1 class="text-4xl sm:text-5xl font-bold tracking-tight text-gray-900 dark:text-gray-100">Templates</h1>
+    <p class="mt-4 text-lg text-gray-600 dark:text-gray-400">Live, clickable previews of every template you can start from in the QuickSite Chrome extension. Each one is a plain static HTML page — Tailwind CDN, dark-mode ready, zero runtime dependencies.</p>
+  </div>
+  <div class="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+    
+    <article class="group rounded-xl overflow-hidden bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-800 shadow-sm hover:shadow-lg hover:-translate-y-0.5 transition">
+      <div class="relative aspect-[16/10] overflow-hidden bg-gray-100 dark:bg-gray-950 border-b border-gray-200 dark:border-gray-800">
+        <!-- Scaled iframe: renders the real template at 1200x750, then
+             scales to fit the card. pointer-events:none so the click
+             falls through to the wrapping link. loading="lazy" so the
+             visitor only pays for thumbnails they actually see. -->
+        <iframe
+          src="./landing/"
+          loading="lazy"
+          title="Landing page preview"
+          class="absolute top-0 left-0 pointer-events-none"
+          style="width: 1200px; height: 750px; transform: scale(0.35); transform-origin: 0 0; border: 0;"
+        ></iframe>
+        <span class="absolute top-3 right-3 inline-flex items-center gap-1 rounded-full bg-indigo-600 dark:bg-indigo-500 px-2.5 py-1 text-xs font-medium text-white capitalize shadow">
+          indigo
+        </span>
+        <!-- Click surface over the whole thumbnail. -->
+        <a href="./landing/" class="absolute inset-0" aria-label="Open Landing page preview"></a>
+      </div>
+      <div class="p-5">
+        <h3 class="text-lg font-semibold text-gray-900 dark:text-gray-100">Landing page</h3>
+        <p class="mt-2 text-sm text-gray-600 dark:text-gray-400">A SaaS/product landing page with features, testimonials, and pricing.</p>
+        <div class="mt-4 flex items-center justify-between">
+          <a href="./landing/" class="inline-flex items-center text-sm font-medium text-indigo-600 dark:text-indigo-400 hover:text-indigo-700 dark:hover:text-indigo-300">
+            View template <span class="ml-1">&rarr;</span>
+          </a>
+          <a href="https://github.com/QuickSiteSpace/quicksite/blob/main/extension/src/templates/landing.html" target="_blank" rel="noopener" class="text-xs text-gray-500 dark:text-gray-400 hover:text-gray-700 dark:hover:text-gray-300">source</a>
+        </div>
+      </div>
+    </article>
+
+    <article class="group rounded-xl overflow-hidden bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-800 shadow-sm hover:shadow-lg hover:-translate-y-0.5 transition">
+      <div class="relative aspect-[16/10] overflow-hidden bg-gray-100 dark:bg-gray-950 border-b border-gray-200 dark:border-gray-800">
+        <!-- Scaled iframe: renders the real template at 1200x750, then
+             scales to fit the card. pointer-events:none so the click
+             falls through to the wrapping link. loading="lazy" so the
+             visitor only pays for thumbnails they actually see. -->
+        <iframe
+          src="./portfolio/"
+          loading="lazy"
+          title="Portfolio preview"
+          class="absolute top-0 left-0 pointer-events-none"
+          style="width: 1200px; height: 750px; transform: scale(0.35); transform-origin: 0 0; border: 0;"
+        ></iframe>
+        <span class="absolute top-3 right-3 inline-flex items-center gap-1 rounded-full bg-emerald-600 dark:bg-emerald-500 px-2.5 py-1 text-xs font-medium text-white capitalize shadow">
+          emerald
+        </span>
+        <!-- Click surface over the whole thumbnail. -->
+        <a href="./portfolio/" class="absolute inset-0" aria-label="Open Portfolio preview"></a>
+      </div>
+      <div class="p-5">
+        <h3 class="text-lg font-semibold text-gray-900 dark:text-gray-100">Portfolio</h3>
+        <p class="mt-2 text-sm text-gray-600 dark:text-gray-400">A personal portfolio for designers, developers, and other makers.</p>
+        <div class="mt-4 flex items-center justify-between">
+          <a href="./portfolio/" class="inline-flex items-center text-sm font-medium text-emerald-600 dark:text-emerald-400 hover:text-emerald-700 dark:hover:text-emerald-300">
+            View template <span class="ml-1">&rarr;</span>
+          </a>
+          <a href="https://github.com/QuickSiteSpace/quicksite/blob/main/extension/src/templates/portfolio.html" target="_blank" rel="noopener" class="text-xs text-gray-500 dark:text-gray-400 hover:text-gray-700 dark:hover:text-gray-300">source</a>
+        </div>
+      </div>
+    </article>
+
+    <article class="group rounded-xl overflow-hidden bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-800 shadow-sm hover:shadow-lg hover:-translate-y-0.5 transition">
+      <div class="relative aspect-[16/10] overflow-hidden bg-gray-100 dark:bg-gray-950 border-b border-gray-200 dark:border-gray-800">
+        <!-- Scaled iframe: renders the real template at 1200x750, then
+             scales to fit the card. pointer-events:none so the click
+             falls through to the wrapping link. loading="lazy" so the
+             visitor only pays for thumbnails they actually see. -->
+        <iframe
+          src="./small-business/"
+          loading="lazy"
+          title="Small business preview"
+          class="absolute top-0 left-0 pointer-events-none"
+          style="width: 1200px; height: 750px; transform: scale(0.35); transform-origin: 0 0; border: 0;"
+        ></iframe>
+        <span class="absolute top-3 right-3 inline-flex items-center gap-1 rounded-full bg-amber-600 dark:bg-amber-500 px-2.5 py-1 text-xs font-medium text-white capitalize shadow">
+          amber
+        </span>
+        <!-- Click surface over the whole thumbnail. -->
+        <a href="./small-business/" class="absolute inset-0" aria-label="Open Small business preview"></a>
+      </div>
+      <div class="p-5">
+        <h3 class="text-lg font-semibold text-gray-900 dark:text-gray-100">Small business</h3>
+        <p class="mt-2 text-sm text-gray-600 dark:text-gray-400">A one-pager for a local service business — services, hours, and contact.</p>
+        <div class="mt-4 flex items-center justify-between">
+          <a href="./small-business/" class="inline-flex items-center text-sm font-medium text-amber-600 dark:text-amber-400 hover:text-amber-700 dark:hover:text-amber-300">
+            View template <span class="ml-1">&rarr;</span>
+          </a>
+          <a href="https://github.com/QuickSiteSpace/quicksite/blob/main/extension/src/templates/small-business.html" target="_blank" rel="noopener" class="text-xs text-gray-500 dark:text-gray-400 hover:text-gray-700 dark:hover:text-gray-300">source</a>
+        </div>
+      </div>
+    </article>
+  </div>
+</main>
+
+<footer class="bg-white dark:bg-gray-900 border-t border-gray-200 dark:border-gray-800">
+  <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-8 text-sm text-gray-500 dark:text-gray-400 flex flex-col sm:flex-row items-center justify-between gap-4">
+    <p>&copy; 2026 QuickSite.Space</p>
+    <p>Generated from the <a href="https://github.com/QuickSiteSpace/quicksite/tree/main/extension/src/templates" target="_blank" rel="noopener" class="text-gray-700 dark:text-gray-300 hover:underline">quicksite monorepo</a>. Do not edit this folder by hand.</p>
+  </div>
+</footer>
+
+<style>
+  .qs-dark-icon { display: none; }
+  .dark .qs-light-icon { display: none; }
+  .dark .qs-dark-icon { display: inline; }
+</style>
+
+</body>
+</html>

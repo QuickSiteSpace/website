@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Sunset Bakery — fresh bread daily in Oakland</title>
+  <meta name="description" content="Sunset Bakery is a neighborhood bakery in Oakland baking sourdough, pastries, and cakes from scratch every morning. Stop by for a warm loaf and a friendly hello.">
+  <meta name="keywords" content="bakery, sourdough, oakland, local, small business, pastries">
+  <!-- Tailwind CDN is here so the raw file previews correctly when opened
+       directly in a browser. The extension's publish pipeline adds its
+       own shell (with the tailwind.config + theme-init script), so this
+       <script> tag is discarded at import time. -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>tailwind.config = { darkMode: 'class' }</script>
+</head>
+<body class="bg-amber-50 dark:bg-gray-950 text-gray-900 dark:text-gray-100">
+
+<header class="bg-amber-50 dark:bg-gray-950 border-b border-amber-200 dark:border-gray-800">
+  <div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+    <a href="#" class="flex items-center gap-2 text-gray-900 dark:text-gray-100 font-semibold">
+      <span class="inline-block h-7 w-7 rounded-full bg-amber-500 dark:bg-amber-600"></span>
+      <span class="text-lg">Sunset Bakery</span>
+    </a>
+    <nav class="hidden sm:flex items-center gap-6 text-sm text-gray-700 dark:text-gray-300">
+      <a href="#services" class="hover:text-amber-700 dark:hover:text-amber-400">Services</a>
+      <a href="#hours" class="hover:text-amber-700 dark:hover:text-amber-400">Hours</a>
+      <a href="#contact" class="hover:text-amber-700 dark:hover:text-amber-400">Contact</a>
+      <a href="#contact" class="inline-flex items-center rounded-full bg-amber-500 hover:bg-amber-600 dark:bg-amber-600 dark:hover:bg-amber-500 px-4 py-2 text-white font-medium">Order online</a>
+    </nav>
+  </div>
+</header>
+
+<section id="hero" class="bg-gradient-to-br from-amber-100 via-amber-50 to-orange-100 dark:from-gray-900 dark:via-gray-950 dark:to-amber-950">
+  <div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 py-20 sm:py-28 text-center">
+    <p class="text-sm font-medium tracking-wide uppercase text-amber-700 dark:text-amber-400 mb-3">Oakland, California</p>
+    <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-gray-900 dark:text-gray-100">Sunset Bakery</h1>
+    <p class="mt-5 max-w-2xl mx-auto text-lg sm:text-xl text-gray-700 dark:text-gray-300">Fresh sourdough, flaky pastries, and handmade cakes — baked from scratch every morning in our little corner shop.</p>
+    <div class="mt-8 flex flex-col sm:flex-row items-center justify-center gap-3">
+      <a href="#contact" class="inline-flex items-center rounded-full bg-amber-500 hover:bg-amber-600 dark:bg-amber-600 dark:hover:bg-amber-500 px-6 py-3 text-white font-medium shadow-sm">Order online</a>
+      <a href="#services" class="inline-flex items-center rounded-full border border-amber-300 dark:border-amber-700 hover:bg-amber-100 dark:hover:bg-gray-900 px-6 py-3 text-amber-800 dark:text-amber-300 font-medium">See what we bake</a>
+    </div>
+  </div>
+</section>
+
+<section id="services" data-name="Services" data-description="What we offer" class="bg-white dark:bg-gray-900 py-16 sm:py-24">
+  <div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+    <div class="max-w-2xl mx-auto text-center">
+      <h2 class="text-3xl sm:text-4xl font-bold text-gray-900 dark:text-gray-100">What comes out of our oven</h2>
+      <p class="mt-3 text-gray-600 dark:text-gray-400">Everything is made in-house using locally milled flour and a whole lot of patience.</p>
+    </div>
+    <div class="mt-12 grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+      <div class="rounded-2xl bg-amber-50 dark:bg-gray-800 p-8 border border-amber-100 dark:border-gray-700">
+        <div class="h-12 w-12 rounded-full bg-amber-200 dark:bg-amber-900 text-amber-800 dark:text-amber-300 flex items-center justify-center text-xl font-semibold">B</div>
+        <h3 class="mt-5 text-xl font-semibold text-gray-900 dark:text-gray-100">Daily Breads</h3>
+        <p class="mt-3 text-gray-600 dark:text-gray-400">Classic sourdough, country loaves, seeded rye, and soft brioche. Long-fermented for flavor, pulled from the oven before you arrive.</p>
+      </div>
+      <div class="rounded-2xl bg-amber-50 dark:bg-gray-800 p-8 border border-amber-100 dark:border-gray-700">
+        <div class="h-12 w-12 rounded-full bg-amber-200 dark:bg-amber-900 text-amber-800 dark:text-amber-300 flex items-center justify-center text-xl font-semibold">P</div>
+        <h3 class="mt-5 text-xl font-semibold text-gray-900 dark:text-gray-100">Pastries &amp; Coffee</h3>
+        <p class="mt-3 text-gray-600 dark:text-gray-400">Butter croissants, morning buns, seasonal galettes, and single-origin espresso pulled by a barista who actually likes mornings.</p>
+      </div>
+      <div class="rounded-2xl bg-amber-50 dark:bg-gray-800 p-8 border border-amber-100 dark:border-gray-700">
+        <div class="h-12 w-12 rounded-full bg-amber-200 dark:bg-amber-900 text-amber-800 dark:text-amber-300 flex items-center justify-center text-xl font-semibold">C</div>
+        <h3 class="mt-5 text-xl font-semibold text-gray-900 dark:text-gray-100">Custom Cakes</h3>
+        <p class="mt-3 text-gray-600 dark:text-gray-400">Birthdays, anniversaries, "just because" Tuesdays — we make custom cakes to order. Call at least 48 hours ahead so we can plan it right.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="hours" data-name="Hours &amp; Location" data-description="When and where" class="bg-amber-50 dark:bg-gray-950 py-16 sm:py-24">
+  <div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+    <div class="grid gap-12 lg:grid-cols-2 items-start">
+      <div>
+        <h2 class="text-3xl sm:text-4xl font-bold text-gray-900 dark:text-gray-100">Hours</h2>
+        <p class="mt-3 text-gray-600 dark:text-gray-400">We open early. We close when the last pastry goes home.</p>
+        <dl class="mt-8 divide-y divide-amber-200 dark:divide-gray-800 rounded-2xl border border-amber-200 dark:border-gray-800 bg-white dark:bg-gray-900 overflow-hidden">
+          <div class="flex items-center justify-between px-6 py-4">
+            <dt class="font-medium text-gray-900 dark:text-gray-100">Monday</dt>
+            <dd class="text-gray-600 dark:text-gray-400">Closed</dd>
+          </div>
+          <div class="flex items-center justify-between px-6 py-4">
+            <dt class="font-medium text-gray-900 dark:text-gray-100">Tuesday</dt>
+            <dd class="text-gray-600 dark:text-gray-400">7:00 AM – 4:00 PM</dd>
+          </div>
+          <div class="flex items-center justify-between px-6 py-4">
+            <dt class="font-medium text-gray-900 dark:text-gray-100">Wednesday</dt>
+            <dd class="text-gray-600 dark:text-gray-400">7:00 AM – 4:00 PM</dd>
+          </div>
+          <div class="flex items-center justify-between px-6 py-4">
+            <dt class="font-medium text-gray-900 dark:text-gray-100">Thursday</dt>
+            <dd class="text-gray-600 dark:text-gray-400">7:00 AM – 4:00 PM</dd>
+          </div>
+          <div class="flex items-center justify-between px-6 py-4">
+            <dt class="font-medium text-gray-900 dark:text-gray-100">Friday</dt>
+            <dd class="text-gray-600 dark:text-gray-400">7:00 AM – 6:00 PM</dd>
+          </div>
+          <div class="flex items-center justify-between px-6 py-4">
+            <dt class="font-medium text-gray-900 dark:text-gray-100">Saturday</dt>
+            <dd class="text-gray-600 dark:text-gray-400">8:00 AM – 5:00 PM</dd>
+          </div>
+          <div class="flex items-center justify-between px-6 py-4">
+            <dt class="font-medium text-gray-900 dark:text-gray-100">Sunday</dt>
+            <dd class="text-gray-600 dark:text-gray-400">8:00 AM – 2:00 PM</dd>
+          </div>
+        </dl>
+      </div>
+      <div>
+        <h2 class="text-3xl sm:text-4xl font-bold text-gray-900 dark:text-gray-100">Find us</h2>
+        <p class="mt-3 text-gray-600 dark:text-gray-400">Tucked between the bookshop and the old record store.</p>
+        <address class="mt-6 not-italic text-gray-700 dark:text-gray-300 space-y-1">
+          <div class="font-medium text-gray-900 dark:text-gray-100">Sunset Bakery</div>
+          <div>1428 Grand Avenue</div>
+          <div>Oakland, CA 94612</div>
+          <div class="pt-2"><a href="tel:+15550134212" class="text-amber-700 dark:text-amber-400 hover:underline">(555) 013-4212</a></div>
+        </address>
+        <div class="mt-6 aspect-[4/3] rounded-lg bg-gradient-to-br from-amber-100 to-amber-300 dark:from-amber-900 dark:to-amber-700 flex items-center justify-center text-amber-900 dark:text-amber-200 font-medium">Map preview</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="about" data-name="About" data-description="Our story" class="bg-white dark:bg-gray-900 py-16 sm:py-24">
+  <div class="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8 text-center">
+    <h2 class="text-3xl sm:text-4xl font-bold text-gray-900 dark:text-gray-100">Our story</h2>
+    <p class="mt-6 text-lg text-gray-700 dark:text-gray-300">Sunset Bakery started in 2014 as a weekend hobby in Marta and Theo's home kitchen. A few too many loaves later, they rented a tiny storefront on Grand Avenue and never looked back.</p>
+    <p class="mt-4 text-lg text-gray-700 dark:text-gray-300">Today a small crew of bakers, pastry chefs, and very patient baristas keep the ovens warm seven mornings a week. We believe in slow fermentation, real butter, good neighbors, and saying yes to the kids who want to watch the mixer spin.</p>
+  </div>
+</section>
+
+<section id="contact" data-name="Contact" data-description="Get in touch" class="bg-amber-50 dark:bg-gray-950 py-16 sm:py-24">
+  <div class="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8 text-center">
+    <h2 class="text-3xl sm:text-4xl font-bold text-gray-900 dark:text-gray-100">Drop us a line</h2>
+    <p class="mt-4 text-gray-700 dark:text-gray-300">Planning a custom cake, a big catering order, or just have a question about today's bake? We'd love to hear from you — call, email, or stop by.</p>
+    <div class="mt-10 grid gap-6 sm:grid-cols-2 max-w-xl mx-auto">
+      <a href="tel:+15550134212" class="block rounded-2xl border border-amber-200 dark:border-gray-800 bg-white dark:bg-gray-900 px-6 py-8 hover:bg-amber-100 dark:hover:bg-gray-800">
+        <div class="text-sm uppercase tracking-wide text-amber-700 dark:text-amber-400 font-medium">Call</div>
+        <div class="mt-2 text-xl font-semibold text-gray-900 dark:text-gray-100">(555) 013-4212</div>
+      </a>
+      <a href="mailto:hello@sunsetbakery.test" class="block rounded-2xl border border-amber-200 dark:border-gray-800 bg-white dark:bg-gray-900 px-6 py-8 hover:bg-amber-100 dark:hover:bg-gray-800">
+        <div class="text-sm uppercase tracking-wide text-amber-700 dark:text-amber-400 font-medium">Email</div>
+        <div class="mt-2 text-xl font-semibold text-gray-900 dark:text-gray-100">hello@sunsetbakery.test</div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<footer class="bg-white dark:bg-gray-900 border-t border-amber-200 dark:border-gray-800">
+  <div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 py-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-sm text-gray-500 dark:text-gray-400">
+    <p>&copy; 2026 Sunset Bakery. Baked with love in Oakland.</p>
+    <nav class="flex items-center gap-6">
+      <a href="#" class="hover:text-amber-700 dark:hover:text-amber-400">Privacy</a>
+      <a href="#" class="hover:text-amber-700 dark:hover:text-amber-400">Terms</a>
+      <a href="#" class="hover:text-amber-700 dark:hover:text-amber-400">Instagram</a>
+      <a href="https://quicksite.space" class="hover:text-amber-700 dark:hover:text-amber-400">Built with QuickSite</a>
+    </nav>
+  </div>
+</footer>
+
+</body>
+</html>
