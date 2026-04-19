@@ -1,12 +1,30 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="dark">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>QuickSite.Space - AI-Powered Website Builder</title>
     <meta name="description" content="QuickSite.space is an AI powered website builder that helps you create beautiful, responsive websites instantly.">
     <link rel="shortcut icon" href="icon.ico">
+    <script>
+      // Dark-by-default, light is opt-in. Runs before the CSS is applied
+      // so there's no flash of light theme. The `dark` class is on <html>
+      // by default in the markup; we remove it only when the user has
+      // explicitly chosen light via the toggle.
+      (function () {
+        try {
+          if (localStorage.getItem('qs-theme') === 'light') {
+            document.documentElement.classList.remove('dark');
+          }
+        } catch (e) { /* storage blocked — stay dark */ }
+        window.__qsToggleTheme = function () {
+          var isDark = document.documentElement.classList.toggle('dark');
+          try { localStorage.setItem('qs-theme', isDark ? 'dark' : 'light'); } catch (e) {}
+        };
+      })();
+    </script>
     <script src="https://cdn.tailwindcss.com"></script>
+    <script>tailwind.config = { darkMode: 'class' }</script>
     <!--Font awesome-->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <!--font-->
@@ -130,6 +148,102 @@
             transform: translateY(-5px);
             cursor: pointer;
         }
+
+        /* ── Dark mode overrides ──────────────────────────────────────
+           Targeted overrides for the hand-rolled custom CSS above plus
+           a small set of utility-class patterns the page uses inline.
+           Activated by `html.dark`; toggle in the navbar writes the
+           qs-theme localStorage key and flips the class. */
+        html.dark {
+            color-scheme: dark;
+        }
+        html.dark body {
+            background: #000 !important;
+            color: #e5e7eb;
+        }
+        html.dark #nav-bar {
+            background-color: rgba(0,0,0,0.85);
+            box-shadow: 0 2px 8px rgba(255,255,255,0.04);
+        }
+        html.dark .nav-link {
+            color: #d1d5db;
+        }
+        html.dark .nav-item:hover {
+            background-color: #059669;
+            color: #fff;
+        }
+        html.dark #hero {
+            background: linear-gradient(
+                120deg,
+                #04231c,
+                #021912,
+                #052b1e
+            );
+        }
+        html.dark #small-menu.open {
+            background-color: #0a0a0a;
+            box-shadow: 0 4px 12px rgba(255,255,255,0.06);
+        }
+        html.dark .card-item {
+            border-color: #1f2937;
+            background-color: #0a0a0a;
+        }
+        html.dark .card-item:hover {
+            border-color: #10b981;
+        }
+        html.dark .card-item i,
+        html.dark .star-icon {
+            color: #6ee7b7;
+            background-color: #04231c;
+        }
+        html.dark .social-icon {
+            color: #6ee7b7;
+            background-color: #04231c;
+        }
+        html.dark .social-icon:hover {
+            background-color: #10b981;
+            color: #0a0a0a;
+        }
+        /* Section chrome: give each page section the same deep black
+           as the body so the content doesn't float in a lighter box. */
+        html.dark section {
+            background-color: transparent;
+        }
+        /* Pricing + vacancy cards use border-gray-300 — bump that dark
+           so the outline's visible on black. */
+        html.dark .border-gray-300 {
+            border-color: #1f2937 !important;
+        }
+        /* The "Join us" band uses a bright gradient — muted version for
+           dark mode so it still reads as an emphasis block without
+           blinding the visitor. */
+        html.dark #join {
+            background: linear-gradient(to right, #065f46, #047857) !important;
+        }
+        /* Pill toggle button in the nav */
+        .theme-toggle {
+            width: 2.5rem;
+            height: 2.5rem;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 9999px;
+            background-color: #f3f4f6;
+            color: #111827;
+            border: 1px solid #e5e7eb;
+            cursor: pointer;
+            transition: transform 0.15s;
+            margin-left: 0.5rem;
+        }
+        .theme-toggle:hover { transform: scale(1.08); }
+        html.dark .theme-toggle {
+            background-color: #0a0a0a;
+            color: #e5e7eb;
+            border-color: #1f2937;
+        }
+        .theme-toggle .qs-dark-icon { display: none; }
+        html.dark .theme-toggle .qs-light-icon { display: none; }
+        html.dark .theme-toggle .qs-dark-icon { display: inline; }
     </style>
 </head>
 <body>
@@ -151,6 +265,10 @@
                 </ul>
                 <a class="bg-emerald-700 text-white font-semibold text-base px-4 py-2 rounded-lg mx-2 hover:bg-emerald-800"
                 href="https://www.linkedin.com/company/quicksite-space/" target="_blank">Get Started</a>
+                <button type="button" onclick="__qsToggleTheme()" aria-label="Toggle dark mode" class="theme-toggle">
+                    <i class="fa-solid fa-moon qs-light-icon" aria-hidden="true"></i>
+                    <i class="fa-solid fa-sun qs-dark-icon" aria-hidden="true"></i>
+                </button>
             </div>
             <!--Menu icon toggle-->
             <div id="menu-icon" class="block cursor-pointer text-xl mr-4 lg:hidden">
@@ -168,10 +286,14 @@
                     <li class="nav-item"><a href="#pricing" class="nav-link">Pricings</a></li>
                     <li class="nav-item"><a href="#vacancies" class="nav-link">Vacancies</a></li>
                 </ul>
-                <a class="bg-emerald-700 text-white font-semibold text-base px-4 py-2 rounded-lg mx-2 hover:bg-emerald-800" 
+                <a class="bg-emerald-700 text-white font-semibold text-base px-4 py-2 rounded-lg mx-2 hover:bg-emerald-800"
                 href="https://www.linkedin.com/company/quicksite-space/" target="_blank">Get Started</a>
+                <button type="button" onclick="__qsToggleTheme()" aria-label="Toggle dark mode" class="theme-toggle mt-2">
+                    <i class="fa-solid fa-moon qs-light-icon" aria-hidden="true"></i>
+                    <i class="fa-solid fa-sun qs-dark-icon" aria-hidden="true"></i>
+                </button>
             </div>
-        </div>  
+        </div>
     </nav>
     <main>
         <!--Hero Section-->
